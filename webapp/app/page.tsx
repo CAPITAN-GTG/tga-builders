@@ -1,6 +1,6 @@
 "use client";
 
-import { Lightbulb, Wrench, DoorClosed, TreePine, ArrowRight } from 'lucide-react';
+import { Lightbulb, Wrench, DoorClosed, TreePine, ArrowRight, Droplet } from 'lucide-react';
 import Link from 'next/link';
 import Welcome from '../components/Welcome';
 import LearnMoreButton from '../components/LearnMoreButton';
@@ -27,6 +27,11 @@ const services = [
     title: 'Landscape Services',
     icon: TreePine,
     href: '/pages/services/landscape'
+  },
+  {
+    title: 'Plumbing',
+    icon: Droplet,
+    href: '/pages/services/plumbing'
   }
 ];
 
@@ -39,7 +44,7 @@ const FrontPage = () => {
         <div className="absolute inset-0 w-full h-full">
           <div 
             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url("/bg.jpg")' }}
+            style={{ backgroundImage: 'url("/bg.png")' }}
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
@@ -58,7 +63,7 @@ const FrontPage = () => {
               <LearnMoreButton variant="dark" />
               <Link
                 href="/pages/contact-us"
-                className="rounded-md bg-white px-8 py-3 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-300"
+                className="rounded-md bg-white px-8 py-3 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-300"
               >
                 Book Now
               </Link>
@@ -66,7 +71,7 @@ const FrontPage = () => {
           </div>
 
           {/* Service Boxes */}
-          <div className="mt-24 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-24 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <div
                 key={service.title}
