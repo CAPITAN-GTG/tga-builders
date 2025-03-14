@@ -1,6 +1,6 @@
 "use client";
 
-import { Lightbulb, Wrench, DoorClosed, TreePine, ArrowRight, Droplet } from 'lucide-react';
+import { Lightbulb, Wrench, DoorClosed, TreePine, ArrowRight, Droplet, Building2, Home } from 'lucide-react';
 import Link from 'next/link';
 import Welcome from '../components/Welcome';
 import LearnMoreButton from '../components/LearnMoreButton';
@@ -8,6 +8,16 @@ import Dream from '../components/Dream';
 import ContactForm from '../components/ContactForm';
 
 const services = [
+  {
+    title: 'Residential Construction',
+    icon: Home,
+    href: '/pages/services/residential'
+  },
+  {
+    title: 'Commercial Construction',
+    icon: Building2,
+    href: '/pages/services/commercial'
+  },
   {
     title: 'Electrical & Lighting',
     icon: Lightbulb,
@@ -71,7 +81,7 @@ const FrontPage = () => {
           </div>
 
           {/* Service Boxes */}
-          <div className="mt-24 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-24 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => (
               <div
                 key={service.title}

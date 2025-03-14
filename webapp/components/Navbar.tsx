@@ -80,7 +80,7 @@ const Navbar: FC = () => {
             className={`
               flex items-center gap-1.5 md:gap-2 px-2 md:px-3 lg:px-4 py-2.5 
               rounded-md text-xs md:text-sm font-medium whitespace-nowrap
-              text-cyan-50 hover:bg-cyan-800/60
+              text-white hover:bg-[#0f2b49]/60
               transition-all duration-200 ease-in-out hover:scale-105
               group relative
             `}
@@ -219,7 +219,7 @@ const Navbar: FC = () => {
   );
 
   return (
-    <Disclosure as="nav" className="bg-gradient-to-r from-cyan-700 to-cyan-600 shadow-lg sticky top-0 z-50">
+    <Disclosure as="nav" className="bg-[#17416E] shadow-lg sticky top-0 z-50">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -252,8 +252,8 @@ const Navbar: FC = () => {
                           flex items-center gap-1.5 md:gap-2 px-2 md:px-3 lg:px-4 py-2.5 
                           rounded-md text-xs md:text-sm font-medium whitespace-nowrap
                           ${isCurrentPath(item.href)
-                            ? 'bg-cyan-900 text-white shadow-inner'
-                            : 'text-cyan-50 hover:bg-cyan-800/60'
+                            ? 'bg-[#0f2b49] text-white shadow-inner'
+                            : 'text-white hover:bg-[#0f2b49]/60'
                           }
                           transition-all duration-200 ease-in-out hover:scale-105
                           group relative
@@ -279,7 +279,7 @@ const Navbar: FC = () => {
 
               {/* Mobile menu button */}
               <div className="sm:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-cyan-50 hover:bg-cyan-800/60 focus:outline-none focus:ring-2 focus:ring-cyan-50 transition-transform active:scale-95">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-[#0f2b49]/60 focus:outline-none focus:ring-2 focus:ring-white transition-transform active:scale-95">
                   <span className="sr-only">
                     {open ? 'Close main menu' : 'Open main menu'}
                   </span>
@@ -308,7 +308,7 @@ const Navbar: FC = () => {
                   if (item.isDropdown) {
                     return (
                       <div key={item.name} className="py-2">
-                        <div className="px-4 text-sm font-medium text-cyan-50 mb-2">Services</div>
+                        <div className="px-4 text-sm font-medium text-white mb-2">Services</div>
                         <div className="space-y-1">
                           {serviceOptions.map((option) => {
                             const Icon = option.icon;
@@ -317,7 +317,7 @@ const Navbar: FC = () => {
                                 key={option.name}
                                 as={Link}
                                 href={option.href}
-                                className="flex items-center gap-3 w-full rounded-md px-4 py-2 text-sm text-cyan-50 hover:bg-cyan-800/60"
+                                className="flex items-center gap-3 w-full rounded-md px-4 py-2 text-sm text-white hover:bg-[#0f2b49]/60"
                               >
                                 <Icon className="h-4 w-4 flex-shrink-0" />
                                 {option.name}
@@ -338,8 +338,8 @@ const Navbar: FC = () => {
                       className={`
                         flex items-center gap-3 w-full rounded-md px-4 py-3 text-base font-medium
                         ${isCurrentPath(item.href)
-                          ? 'bg-cyan-900 text-white'
-                          : 'text-cyan-50 hover:bg-cyan-800/60'
+                          ? 'bg-[#0f2b49] text-white'
+                          : 'text-white hover:bg-[#0f2b49]/60'
                         }
                         transition-all duration-200 ease-in-out active:scale-95
                       `}
