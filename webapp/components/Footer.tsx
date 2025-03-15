@@ -43,10 +43,18 @@ const Footer = () => {
                 <Mail className="h-5 w-5" />
                 <span>tgabuildersinc@gmail.com</span>
               </a>
+              <a href="mailto:team@tgabuildersinc.com" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
+                <Mail className="h-5 w-5" />
+                <span>team@tgabuildersinc.com</span>
+              </a>
               <a href="https://maps.google.com/?q=14120 Pierce St, Arleta, CA 91331" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:text-cyan-400 transition-colors duration-300 group">
                 <MapPin className="h-5 w-5 mt-1 flex-shrink-0" />
                 <span>14120 Pierce St, Arleta, CA 91331</span>
               </a>
+              <div className="pt-2 border-t border-gray-800">
+                <p className="text-sm">License 1126206</p>
+                <p className="text-sm">Classification(s) B General C27 C42</p>
+              </div>
             </div>
           </div>
 
@@ -54,9 +62,8 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-white text-lg font-semibold">NAVIGATE</h3>
             <nav className="space-y-4">
-              <Link href="/pages/Home" className="block hover:text-cyan-400 transition-colors duration-300">Home</Link>
+              <Link href="/" className="block hover:text-cyan-400 transition-colors duration-300">Home</Link>
               <Link href="/pages/about-us" className="block hover:text-cyan-400 transition-colors duration-300">About Us</Link>
-              <Link href="/pages/services" className="block hover:text-cyan-400 transition-colors duration-300">Services</Link>
               <Link href="/pages/reviews" className="block hover:text-cyan-400 transition-colors duration-300">Reviews</Link>
               <Link href="/pages/gallery" className="block hover:text-cyan-400 transition-colors duration-300">Gallery</Link>
               <Link href="/pages/contact-us" className="block hover:text-cyan-400 transition-colors duration-300">Contact</Link>
@@ -98,24 +105,6 @@ const Footer = () => {
                 <span>LinkedIn</span>
               </a>
             </div>
-          </div>
-        </div>
-
-        {/* Gallery Section */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <h3 className="text-white text-lg font-semibold mb-6">OUR GALLERY</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {[...Array(6)].map((_, i) => (
-              <Link 
-                key={i} 
-                href="/pages/gallery" 
-                className="group relative aspect-square bg-gray-800 rounded-lg overflow-hidden hover:ring-2 ring-cyan-400 transition-all duration-300"
-              >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <ImageIcon className="h-8 w-8 text-gray-600 group-hover:text-cyan-400 transition-colors duration-300" />
-                </div>
-              </Link>
-            ))}
           </div>
         </div>
       </div>

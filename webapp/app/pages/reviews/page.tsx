@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Star, StarHalf, Quote } from 'lucide-react';
+import { Star, StarHalf, Quote, ExternalLink } from 'lucide-react';
 
 interface Review {
   id: number;
@@ -85,38 +85,38 @@ const Reviews = () => {
         </div>
       </div>
 
-      {/* Reviews Grid */}
+      {/* Google Reviews Section */}
       <div className="container mx-auto px-4 py-12 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {reviews.map((review) => (
-            <div
-              key={review.id}
-              className="bg-white rounded-lg shadow-md p-6 transition-transform hover:scale-[1.02] duration-300"
-            >
-              <div className="flex items-start gap-4">
-                <img
-                  src={review.avatarUrl}
-                  alt={`${review.name}'s avatar`}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div className="flex-1">
-                  <h3 className="font-semibold text-lg text-gray-900">{review.name}</h3>
-                  <p className="text-sm text-gray-500 mb-1">{review.service}</p>
-                  <div className="flex items-center gap-2">
-                    <StarRating rating={review.rating} />
-                    <span className="text-sm text-gray-500">• {review.date}</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-4 pl-16">
-                <div className="relative">
-                  <Quote className="absolute -left-6 -top-2 w-4 h-4 text-gray-300 transform rotate-180" />
-                  <p className="text-gray-700 leading-relaxed">{review.comment}</p>
-                </div>
-              </div>
+        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900">Google Reviews</h2>
+              <p className="text-gray-600 mt-1">Read our verified customer reviews on Google</p>
             </div>
-          ))}
+            <a
+              href="https://www.google.com/search?q=tga+handyman+services#lrd=0x80c8cf0ad4800159:0x439a74f6254da7ec,1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#17416E] text-white px-4 py-2 rounded-md hover:bg-[#0f2b49] transition-colors duration-300"
+            >
+              <span>View All Reviews</span>
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+          
+          {/* Google Reviews Embed */}
+          <div className="w-full min-h-[600px] relative">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12785.590321661547!2d-115.2434885!3d36.1699412!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8cf0ad4800159%3A0x439a74f6254da7ec!2sTGA%20Handyman%20Services%20LLC!5e0!3m2!1sen!2sus!4v1648147901054!5m2!1sen!2sus"
+              width="100%"
+              height="600"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-lg"
+            ></iframe>
+          </div>
         </div>
 
         {/* Call to Action */}
@@ -128,12 +128,24 @@ const Reviews = () => {
             <p className="text-gray-600 mb-6">
               Join our satisfied customers and let us help you with your next project.
             </p>
-            <a
-              href="/pages/contact-us"
-              className="inline-block bg-[#17416E] text-white px-6 py-3 rounded-md font-medium hover:bg-[#0f2b49] transition-colors duration-300"
-            >
-              Contact Us Today
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href="/pages/contact-us"
+                className="inline-block bg-[#17416E] text-white px-6 py-3 rounded-md font-medium hover:bg-[#0f2b49] transition-colors duration-300"
+              >
+                Contact Us Today
+              </a>
+              <a
+                href="https://www.google.com/search?q=tga+handyman+services#lrd=0x80c8cf0ad4800159:0x439a74f6254da7ec,1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[#17416E] hover:text-[#0f2b49] transition-colors duration-300"
+              >
+                <Star className="w-5 h-5 fill-current" />
+                <span>Leave us a review</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

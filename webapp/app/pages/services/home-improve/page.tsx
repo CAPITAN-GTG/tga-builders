@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeIcon, PhoneIcon } from 'lucide-react';
+import { HomeIcon, PhoneIcon, Sparkles, WashingMachine, Home } from 'lucide-react';
 
 export default function HomeImproveServices() {
   return (
@@ -12,8 +12,7 @@ export default function HomeImproveServices() {
             <h1 className="text-3xl font-bold tracking-tight">Home Improve Services</h1>
           </div>
           <p className="mt-4 text-lg text-cyan-50 max-w-3xl">
-            Transform your living space with our comprehensive home improvement services. 
-            We bring expertise, quality craftsmanship, and attention to detail to every project.
+            With over 18 years of tradesman experience, TGA Handyman Services LLC can help you achieve your project goals.
           </p>
         </div>
       </div>
@@ -21,47 +20,44 @@ export default function HomeImproveServices() {
       {/* Content Section */}
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          {/* Description */}
-          <div className="space-y-6">
-            <h2 className="text-2xl font-semibold text-gray-900">Our Home Improvement Services</h2>
-            <p className="text-gray-600">
-              At TGA Builders, we specialize in transforming houses into dream homes. Our comprehensive 
-              home improvement services are designed to enhance both the functionality and aesthetic appeal 
-              of your living space.
-            </p>
+          {/* Services Description */}
+          <div className="space-y-8">
             <div className="bg-white shadow-sm rounded-lg p-6">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">What We Offer</h3>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-600"></span>
-                  Room Renovations
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-600"></span>
-                  Custom Built-ins
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-600"></span>
-                  Flooring Installation
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-600"></span>
-                  Interior Painting
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-600"></span>
-                  Lighting Upgrades
-                </li>
-              </ul>
+              <div className="flex items-center gap-3 mb-4">
+                <Home className="h-6 w-6 text-cyan-600" />
+                <h3 className="text-xl font-medium text-gray-900">Whole Home Renovations</h3>
+              </div>
+              <p className="text-gray-600">
+                If you have a list of renovation projects to undertake, then you may be considering a project for renovating your entire home. For whole home renovations it's important to consider the design and execution of the entire project in a unified manner, and that's where we can help. We are a reliable partner for assessing renovation requirements, helping you understand build/design options, and providing budget estimates.
+              </p>
+            </div>
+
+            <div className="bg-white shadow-sm rounded-lg p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <WashingMachine className="h-6 w-6 text-cyan-600" />
+                <h3 className="text-xl font-medium text-gray-900">Laundry Room</h3>
+              </div>
+              <p className="text-gray-600">
+                If your home needs a fresh new laundry area or more storage space, then a upgrade could be a great option for you. We can install built-in cabinets and shelves that help you store supplies, laundry materials, coats, boots, and more, so that you don't have to trip over these things ever again.
+              </p>
+            </div>
+
+            <div className="bg-white shadow-sm rounded-lg p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Sparkles className="h-6 w-6 text-cyan-600" />
+                <h3 className="text-xl font-medium text-gray-900">Energy Efficient</h3>
+              </div>
+              <p className="text-gray-600">
+                Las Vegas, Nevada is not easy on the utility bills for home and business owners. If you want to 'go green' as part of your next project to save on utility bills through efficient lighting, dual flush toilet kits, and new windows, then an energy efficiency project is likely underway within your home. Not only will you save money on your bills, but you'll also take part in helping the environment, improving the looks of your home, and increasing its value. This is truly a project in which you win on all fronts.
+              </p>
             </div>
           </div>
 
           {/* Contact Card */}
-          <div className="bg-white shadow-sm rounded-lg p-6 lg:mt-0 mt-8">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">Get Started Today</h3>
+          <div className="bg-white shadow-sm rounded-lg p-6 lg:mt-0 mt-8 h-fit">
+            <h3 className="text-xl font-medium text-gray-900 mb-4">Get Started Today</h3>
             <p className="text-gray-600 mb-6">
-              Ready to start your home improvement project? Contact us for a free consultation 
-              and estimate. Our team is ready to bring your vision to life.
+              To get in touch with our Customer Care team for a quote or to schedule a booking, please give us a call.
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
@@ -70,7 +66,7 @@ export default function HomeImproveServices() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Call us at</p>
-                  <p className="text-gray-900 font-medium">(747) 303-8403</p>
+                  <p className="text-gray-900 font-medium">702-755-3316</p>
                 </div>
               </div>
               <button className="w-full bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-cyan-700 transition-colors">

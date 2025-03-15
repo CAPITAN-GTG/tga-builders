@@ -78,8 +78,16 @@ const AboutUs = () => {
         {/* Introduction */}
         <div className="prose prose-lg max-w-none mb-16">
           <p className="text-xl text-gray-900 leading-relaxed">
-            TGA Handyman Services LLC is owned and founded by Manny Samayoa who is a passionate tradesman and family man. 
-            Manny has over 18 years of experience in the Handyman Trade.
+            At TGA Builders Inc. our mission is to deliver the best service in California to our residential 
+            and commercial clients. We believe that a team of technicians which is willing to listen to 
+            customers' specific requirements is critical to the success of any project. That's why we consider 
+            the advice we give as important as the services we provide.
+          </p>
+          <p className="text-xl text-gray-900 leading-relaxed">
+            What sets us apart from our competition is how much we value our customers' feedback. This is 
+            exemplified through our proven track record, testimonials, and over 18 years of experience in 
+            this business. We pride ourselves in our superior capabilities and resources, always working 
+            hard to deliver quality results within budget and established timelines.
           </p>
         </div>
 
@@ -96,53 +104,59 @@ const AboutUs = () => {
 
         <hr className="border-gray-200 my-16" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Left Column */}
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Services</h2>
-              <p className="text-gray-900 leading-relaxed mb-6">
-                Our team is capable of delivering a range of handyman services of every size and type:
-              </p>
-            </div>
+        {/* Corporate Values Section */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Corporate Values</h2>
+          <ul className="space-y-4 text-gray-900">
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-gray-900 flex-shrink-0 mt-1" />
+              <span>Reliable service at an affordable and fair price.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-gray-900 flex-shrink-0 mt-1" />
+              <span>Taking responsibility for our services and advice.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-gray-900 flex-shrink-0 mt-1" />
+              <span>Transparency in licensing, bonds, and insurance that we hold.</span>
+            </li>
+          </ul>
+          <p className="mt-6 text-gray-900">
+            It is also our mission to empower our team members to in their career with us. We always train 
+            our new hires to a high standard of quality and consistently invest in new training and equipment 
+            to make sure our team's work is consistent and efficient.
+          </p>
+        </div>
 
-            {/* Services Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {/* Vision Section */}
+          <div className="space-y-6">
+            <h2 className="text-2xl font-bold text-gray-900">Our Vision</h2>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <ul className="grid grid-cols-1 gap-3">
-                {services.map((service, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <CheckCircle2 className="h-4 w-4 text-gray-900 flex-shrink-0" />
-                    <span className="text-gray-900">{service}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="text-gray-900 leading-relaxed mb-4">
+                We are focused on continually improving our reputation within the California area. As part 
+                of our vision, we are driven to strengthen relationships with our existing clients.
+              </p>
+              <p className="text-gray-900 leading-relaxed">
+                We are also excited about working with new clients that have heard positive things from 
+                friends and family. It makes us proud that most of our new customers found us this way, 
+                rather than through advertising.
+              </p>
             </div>
           </div>
 
-          {/* Right Column */}
-          <div className="space-y-8">
-            <div className="bg-gray-50 p-6 rounded-lg mb-8">
-              <div className="flex items-center gap-3 mb-4">
-                <Phone className="h-6 w-6 text-gray-900" />
-                <h3 className="text-xl font-semibold text-gray-900">Contact Us</h3>
-              </div>
-              <p className="text-gray-900 mb-4">
-                Need professional handyman services? We're here to help!
+          {/* Approach Section */}
+          <div className="space-y-6">
+            <h2 className="text-2xl font-bold text-gray-900">Our Approach</h2>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <p className="text-gray-900 leading-relaxed mb-4">
+                We always tailor services to each client's needs. We're able to do this because we have 
+                over 16 years of tradesman experience in maintenance and improvements, flooring, and demolitions.
               </p>
-              <a 
-                href="tel:+17473038403" 
-                className="inline-flex items-center text-lg font-semibold text-gray-900 hover:text-gray-600 transition-colors"
-              >
-                (747) 303-8403
-              </a>
-            </div>
-
-            <div className="prose prose-lg">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Choose Us?</h2>
               <p className="text-gray-900 leading-relaxed">
-                When you choose TGA Handyman Services LLC, you choose the very best this area has to offer. 
-                Our services are designed to provide you with the labor, resources, and experience needed 
-                to get your job done right.
+                Instead of taking a cookie-cutter approach that you might expect from smaller contracting 
+                companies, our company is a powerhouse of experience, knowledge, and skill. We love making 
+                home and business owners' project dreams come true!
               </p>
             </div>
           </div>
@@ -150,62 +164,32 @@ const AboutUs = () => {
 
         <hr className="border-gray-200 my-16" />
 
-        {/* Bottom Sections */}
-        <div className="space-y-16">
-          {/* Commitment Section */}
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Our Commitment
-            </h2>
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <p className="text-gray-900 leading-relaxed">
-                We're committed to listening to our clients from the moment we begin our working relationship. 
-                This ensures that we deliver what is needed professionally and within budget. We also listen 
-                to our clients' feedback during the job and after the job, so that they are satisfied 
-                throughout the entire process.
-              </p>
-            </div>
+        {/* Quality Assurance Section */}
+        <div className="space-y-6 mb-16">
+          <h2 className="text-2xl font-bold text-gray-900">Quality Assurance</h2>
+          <div className="bg-gray-50 p-6 rounded-lg">
+            <p className="text-gray-900 leading-relaxed">
+              TGA Builders Inc. has an exemplary quality assurance program to ensure that our workmanship 
+              is always satisfactory to us and our clients.
+            </p>
           </div>
+        </div>
 
-          {/* Professional Services Section */}
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Professional Handyman Services
-            </h2>
-            <div className="space-y-6 bg-gray-50 p-6 rounded-lg">
-              <ul className="space-y-4 text-gray-900">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-gray-900 flex-shrink-0 mt-1" />
-                  <span>One-stop shop for all your home repair, remodeling, and installation needs</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-gray-900 flex-shrink-0 mt-1" />
-                  <span>Quality workmanship guaranteed</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-gray-900 flex-shrink-0 mt-1" />
-                  <span>Background-checked employees for your safety and peace of mind</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-gray-900 flex-shrink-0 mt-1" />
-                  <span>Free estimates over the phone when possible</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-gray-900 flex-shrink-0 mt-1" />
-                  <span>Proper COVID-19 precautions for your safety</span>
-                </li>
-              </ul>
-              
-              <div className="border-t border-gray-200 pt-4 mt-6">
-                <p className="text-gray-900">
-                  Need an efficient and affordable handyman service? Call us at{' '}
-                  <a href="tel:+17473038403" className="font-semibold hover:text-gray-600 transition-colors">
-                    (747) 303-8403
-                  </a>
-                </p>
-              </div>
-            </div>
+        {/* Contact Section */}
+        <div className="bg-gray-50 p-6 rounded-lg">
+          <div className="flex items-center gap-3 mb-4">
+            <Phone className="h-6 w-6 text-gray-900" />
+            <h3 className="text-xl font-semibold text-gray-900">Contact Us</h3>
           </div>
+          <p className="text-gray-900 mb-4">
+            Need professional services? We're here to help!
+          </p>
+          <a 
+            href="tel:+17027553316" 
+            className="inline-flex items-center text-lg font-semibold text-gray-900 hover:text-gray-600 transition-colors"
+          >
+            (702) 755-3316
+          </a>
         </div>
       </div>
     </div>

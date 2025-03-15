@@ -174,10 +174,10 @@ const ContactForm = () => {
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full flex justify-center items-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 transition-colors duration-300"
+                className="w-full flex justify-center items-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-white bg-[#17416E] hover:bg-white hover:text-[#17416E] hover:border hover:border-[#17416E] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 transition-colors duration-300 group"
               >
                 Submit Form
-                <Send className="ml-2 h-5 w-5" />
+                <Send className="ml-2 h-5 w-5 transition-transform duration-1000 group-hover:rotate-360" />
               </button>
             </div>
           </form>

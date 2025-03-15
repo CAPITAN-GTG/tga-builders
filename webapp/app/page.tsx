@@ -6,6 +6,7 @@ import Welcome from '../components/Welcome';
 import LearnMoreButton from '../components/LearnMoreButton';
 import Dream from '../components/Dream';
 import ContactForm from '../components/ContactForm';
+import StatsHero from '../components/StatsHero';
 
 const services = [
   {
@@ -106,6 +107,7 @@ const FrontPage = () => {
       </div>
       <Welcome />
       <Dream />
+      <StatsHero />
       <ContactForm />
     </main>
   );
