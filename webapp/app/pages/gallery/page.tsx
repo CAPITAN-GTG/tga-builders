@@ -1,26 +1,68 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
-const Gallery = () => {
-  const projects = [
+interface GalleryImage {
+  src: string;
+  alt: string;
+  description: string;
+}
+
+interface ProjectCategory {
+  category: string;
+  description: string;
+  images: GalleryImage[];
+}
+
+interface Video {
+  title: string;
+  description: string;
+  embedId: string;
+}
+
+const Gallery: React.FC = () => {
+  // Generate array of 30 gallery images
+  const galleryImages: GalleryImage[] = Array.from({ length: 30 }, (_, i) => ({
+    src: `/gallery-${i + 1}.png`,
+    alt: `Gallery Project ${i + 1}`,
+    description: `Professional construction and design showcase ${i + 1}`
+  }));
+
+  // Organize images into categories with more professional descriptions
+  const projects: ProjectCategory[] = [
     {
-      category: 'Dream Houses',
-      images: [
-        { src: '/dream.jpg', alt: 'Modern Dream House', description: 'Contemporary Living Space' },
-        { src: '/bg.png', alt: 'Luxury Interior', description: 'Premium Finishes' },
-      ]
+      category: 'Luxury Residential',
+      description: 'Exclusive custom homes crafted with precision and elegance',
+      images: galleryImages.slice(0, 5)
     },
     {
-      category: 'Electrical Work',
-      images: [
-        { src: '/electrical.jpg', alt: 'Professional Wiring', description: 'Expert Electrical Installation' },
-        { src: '/logo.png', alt: 'Smart Home Systems', description: 'Advanced Home Automation' },
-      ]
+      category: 'Commercial Excellence',
+      description: 'State-of-the-art commercial spaces designed for success',
+      images: galleryImages.slice(5, 10)
+    },
+    {
+      category: 'Modern Interiors',
+      description: 'Contemporary interior designs that inspire and captivate',
+      images: galleryImages.slice(10, 15)
+    },
+    {
+      category: 'Expert Renovations',
+      description: 'Transformative renovation projects that exceed expectations',
+      images: galleryImages.slice(15, 20)
+    },
+    {
+      category: 'Architectural Marvels',
+      description: 'Stunning architectural designs that push boundaries',
+      images: galleryImages.slice(20, 25)
+    },
+    {
+      category: 'Sustainable Projects',
+      description: 'Eco-friendly construction with a focus on sustainability',
+      images: galleryImages.slice(25, 30)
     }
   ];
 
-  const videos = [
+  const videos: Video[] = [
     {
       title: "Our Work in Action",
       description: "Watch our skilled team transform spaces and bring visions to life",
@@ -29,188 +71,97 @@ const Gallery = () => {
   ];
 
   return (
-    <div style={{
-      margin: '0 auto',
-      padding: '40px 20px',
-      backgroundColor: '#f0f0f0'
-    }}>
-      <h1 style={{
-        fontSize: '2.5rem',
-        textAlign: 'center',
-        color: '#1a1a1a',
-        marginBottom: '1rem',
-        fontWeight: '600'
-      }}>
-        Project Gallery
-      </h1>
-      <p style={{
-        textAlign: 'center',
-        color: '#666',
-        marginBottom: '3rem',
-        fontSize: '1.1rem'
-      }}>
-        Discover our exceptional work and craftsmanship
-      </p>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <header className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+            Project Gallery
+          </h1>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            Discover our exceptional work and craftsmanship through our extensive portfolio of completed projects
+          </p>
+        </header>
 
-      {/* Video Section */}
-      <div style={{ marginBottom: '4rem' }}>
-        <h2 style={{
-          fontSize: '1.8rem',
-          color: '#2a2a2a',
-          marginBottom: '1.5rem',
-          borderBottom: '2px solid #eaeaea',
-          paddingBottom: '0.5rem'
-        }}>
-          Featured Videos
-        </h2>
-        
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 560px), 1fr))',
-          gap: '20px',
-          alignItems: 'start'
-        }}>
-          {videos.map((video, index) => (
-            <div
-              key={index}
-              style={{
-                position: 'relative',
-                borderRadius: '8px',
-                overflow: 'hidden',
-                boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-                backgroundColor: 'white',
-                transition: 'transform 0.2s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-5px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
-            >
-              <div style={{
-                position: 'relative',
-                paddingBottom: '56.25%', // 16:9 aspect ratio
-                height: 0,
-                overflow: 'hidden',
-              }}>
-                <iframe
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    border: 0,
-                  }}
-                  src={`https://www.youtube.com/embed/${video.embedId}`}
-                  title={video.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-              <div style={{
-                padding: '20px',
-                backgroundColor: 'white',
-              }}>
-                <h3 style={{
-                  fontSize: '1.2rem',
-                  marginBottom: '8px',
-                  fontWeight: '500',
-                  color: '#2a2a2a',
-                }}>
-                  {video.title}
-                </h3>
-                <p style={{
-                  fontSize: '0.9rem',
-                  color: '#666',
-                }}>
-                  {video.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Image Sections */}
-      {projects.map((project, projectIndex) => (
-        <div key={projectIndex} style={{ marginBottom: '4rem' }}>
-          <h2 style={{
-            fontSize: '1.8rem',
-            color: '#2a2a2a',
-            marginBottom: '1.5rem',
-            borderBottom: '2px solid #eaeaea',
-            paddingBottom: '0.5rem'
-          }}>
-            {project.category}
+        {/* Video Section */}
+        <section className="mb-20">
+          <h2 className="text-3xl font-semibold text-gray-800 mb-8 pb-2 border-b-2 border-gray-200">
+            Featured Videos
           </h2>
           
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '20px',
-            alignItems: 'start'
-          }}>
-            {project.images.map((image, imageIndex) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {videos.map((video, index) => (
               <div
-                key={imageIndex}
-                style={{
-                  position: 'relative',
-                  borderRadius: '8px',
-                  overflow: 'hidden',
-                  boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                  transition: 'transform 0.2s ease',
-                  cursor: 'pointer',
-                  aspectRatio: '4/3',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
+                key={index}
+                className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
               >
-                <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    style={{ 
-                      objectFit: 'cover',
-                    }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority={projectIndex === 0 && imageIndex === 0}
+                <div className="relative pb-[56.25%]">
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    src={`https://www.youtube.com/embed/${video.embedId}`}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
                   />
-                  <div style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    background: 'linear-gradient(transparent, rgba(0,0,0,0.8))',
-                    padding: '20px',
-                    color: 'white',
-                  }}>
-                    <h3 style={{
-                      fontSize: '1.2rem',
-                      marginBottom: '4px',
-                      fontWeight: '500'
-                    }}>
-                      {image.alt}
-                    </h3>
-                    <p style={{
-                      fontSize: '0.9rem',
-                      opacity: 0.9
-                    }}>
-                      {image.description}
-                    </p>
-                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+                    {video.title}
+                  </h3>
+                  <p className="text-gray-600 text-lg">
+                    {video.description}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Image Sections */}
+        <div className="space-y-20">
+          {projects.map((project, projectIndex) => (
+            <section key={projectIndex} className="scroll-mt-16" id={project.category.toLowerCase().replace(/\s+/g, '-')}>
+              <div className="mb-8">
+                <h2 className="text-3xl font-semibold text-gray-800 mb-3">
+                  {project.category}
+                </h2>
+                <p className="text-gray-600 text-lg">
+                  {project.description}
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {project.images.map((image, imageIndex) => (
+                  <div
+                    key={imageIndex}
+                    className="group relative rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-gray-100"
+                  >
+                    <div className="relative aspect-[4/3]">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        priority={projectIndex === 0 && imageIndex === 0}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                          <h3 className="text-white text-xl font-semibold mb-2">
+                            {image.alt}
+                          </h3>
+                          <p className="text-white/90 text-sm">
+                            {image.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 };
