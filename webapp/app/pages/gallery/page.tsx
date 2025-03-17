@@ -17,7 +17,7 @@ interface ProjectCategory {
 interface Video {
   title: string;
   description: string;
-  embedId: string;
+  src: string;
 }
 
 const Gallery: React.FC = () => {
@@ -66,7 +66,7 @@ const Gallery: React.FC = () => {
     {
       title: "Our Work in Action",
       description: "Watch our skilled team transform spaces and bring visions to life",
-      embedId: "GMTCyne4J5Q"
+      src: "/tga-video.mp4"
     }
   ];
 
@@ -94,14 +94,16 @@ const Gallery: React.FC = () => {
                 key={index}
                 className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
               >
-                <div className="relative pb-[56.25%]">
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full"
-                    src={`https://www.youtube.com/embed/${video.embedId}`}
-                    title={video.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                <div className="relative pb-[56.25%] bg-gray-900">
+                  <video
+                    className="absolute top-0 left-0 w-full h-full object-contain"
+                    controls
+                    playsInline
+                    preload="metadata"
+                  >
+                    <source src={video.src} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-semibold text-gray-900 mb-2">

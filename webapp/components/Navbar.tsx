@@ -297,7 +297,7 @@ const Navbar: FC = () => {
                   <img 
                     src="/logo.png" 
                     alt="TGA Builders Logo" 
-                    className="h-20 w-auto hover:scale-105 transition-transform duration-300 ease-in-out" 
+                    className="h-16 w-auto hover:scale-105 transition-transform duration-300 ease-in-out" 
                   />
                 </Link>
               </div>
