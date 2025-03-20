@@ -31,14 +31,9 @@ const Gallery: React.FC = () => {
   // Organize images into categories with more professional descriptions
   const projects: ProjectCategory[] = [
     {
-      category: 'Luxury Residential',
-      description: 'Exclusive custom homes crafted with precision and elegance',
-      images: galleryImages.slice(0, 5)
-    },
-    {
       category: 'Commercial Excellence',
       description: 'State-of-the-art commercial spaces designed for success',
-      images: galleryImages.slice(5, 10)
+      images: galleryImages.slice(0, 10)
     },
     {
       category: 'Modern Interiors',

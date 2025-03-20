@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Star, StarHalf, Quote, ExternalLink } from 'lucide-react';
+import { Star, StarHalf, ExternalLink } from 'lucide-react';
 
 interface Review {
   id: number;
@@ -74,13 +74,13 @@ const Reviews = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-[#17416E] text-white py-16">
+      <div className="bg-[#287593] text-white py-16">
         <div className="container mx-auto px-4 max-w-7xl">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4">
             Customer Reviews
           </h1>
           <p className="text-center text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">
-            See what our valued customers have to say about their experience with TGA Builders
+            See what our valued customers have to say about their experience with TGA Builders Inc.
           </p>
         </div>
       </div>
@@ -107,7 +107,7 @@ const Reviews = () => {
           {/* Google Reviews Embed */}
           <div className="w-full min-h-[600px] relative">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12785.590321661547!2d-115.2434885!3d36.1699412!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8cf0ad4800159%3A0x439a74f6254da7ec!2sTGA%20Handyman%20Services%20LLC!5e0!3m2!1sen!2sus!4v1648147901054!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3297.8357891234567!2d-118.4194!3d34.2356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c295d2f1c0c0c0%3A0x0!2s14120%20Pierce%20St%2C%20Arleta%2C%20CA%2091331!5e0!3m2!1sen!2sus!4v1648147901054!5m2!1sen!2sus"
               width="100%"
               height="600"
               style={{ border: 0 }}

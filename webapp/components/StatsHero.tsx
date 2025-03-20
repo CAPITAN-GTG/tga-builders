@@ -13,9 +13,6 @@ const stats = [
 const StatsHero = () => {
   return (
     <section className="relative bg-white py-24">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(#f0f0f0_2px,transparent_2px),linear-gradient(90deg,#f0f0f0_2px,transparent_2px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
-      
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16">
@@ -25,7 +22,7 @@ const StatsHero = () => {
               className="flex flex-col items-center justify-center text-center space-y-2 p-6"
             >
               <div className="flex items-baseline justify-center">
-                <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#17416E]">
+                <span className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#48D0EE]">
                   <CountUp
                     end={stat.number}
                     duration={2.5}
@@ -33,11 +30,11 @@ const StatsHero = () => {
                     scrollSpyOnce
                   />
                 </span>
-                <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#17416E]">
+                <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#48D0EE]">
                   {stat.suffix}
                 </span>
               </div>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 font-medium">
+              <p className="text-sm sm:text-base lg:text-lg text-[#48D0EE] font-medium">
                 {stat.label}
               </p>
             </div>

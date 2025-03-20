@@ -89,7 +89,7 @@ const Navbar: FC = () => {
             className={`
               flex items-center gap-1.5 md:gap-2 px-2 md:px-3 lg:px-4 py-2.5 
               rounded-md text-xs md:text-sm font-medium whitespace-nowrap
-              text-white hover:bg-[#0f2b49]/60
+              text-[#17416E] hover:bg-[#17416E]/10
               transition-all duration-200 ease-in-out hover:scale-105
               group relative
             `}
@@ -147,7 +147,7 @@ const Navbar: FC = () => {
             className={`
               flex items-center gap-1.5 md:gap-2 px-2 md:px-3 lg:px-4 py-2.5 
               rounded-md text-xs md:text-sm font-medium whitespace-nowrap
-              text-white hover:bg-[#0f2b49]/60
+              text-[#17416E] hover:bg-[#17416E]/10
               transition-all duration-200 ease-in-out hover:scale-105
               group relative
             `}
@@ -286,7 +286,7 @@ const Navbar: FC = () => {
   );
 
   return (
-    <Disclosure as="nav" className="bg-[#17416E] shadow-lg sticky top-0 z-50">
+    <Disclosure as="nav" className="bg-white shadow-lg sticky top-0 z-50">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -322,8 +322,8 @@ const Navbar: FC = () => {
                           flex items-center gap-1.5 md:gap-2 px-2 md:px-3 lg:px-4 py-2.5 
                           rounded-md text-xs md:text-sm font-medium whitespace-nowrap
                           ${isCurrentPath(item.href)
-                            ? 'bg-[#0f2b49] text-white shadow-inner'
-                            : 'text-white hover:bg-[#0f2b49]/60'
+                            ? 'bg-[#17416E] text-white shadow-inner'
+                            : 'text-[#17416E] hover:bg-[#17416E]/10'
                           }
                           transition-all duration-200 ease-in-out hover:scale-105
                           group relative
@@ -339,7 +339,7 @@ const Navbar: FC = () => {
                           </span>
                         </span>
                         {isCurrentPath(item.href) && (
-                          <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white rounded-full" />
+                          <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#17416E] rounded-full" />
                         )}
                       </Link>
                     );
@@ -349,7 +349,7 @@ const Navbar: FC = () => {
 
               {/* Mobile menu button */}
               <div className="sm:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-[#0f2b49]/60 focus:outline-none focus:ring-2 focus:ring-white transition-transform active:scale-95">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-[#17416E] hover:bg-[#17416E]/10 focus:outline-none focus:ring-2 focus:ring-[#17416E] transition-transform active:scale-95">
                   <span className="sr-only">
                     {open ? 'Close main menu' : 'Open main menu'}
                   </span>
@@ -380,7 +380,7 @@ const Navbar: FC = () => {
                       <div key={item.name} className="py-2">
                         <button
                           onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
-                          className="flex items-center justify-between w-full rounded-md px-4 py-3 text-base font-medium text-white hover:bg-[#0f2b49]/60"
+                          className="flex items-center justify-between w-full rounded-md px-4 py-3 text-base font-medium text-[#17416E] hover:bg-[#17416E]/10"
                         >
                           <div className="flex items-center gap-3">
                             <Users className="h-5 w-5 flex-shrink-0" />
@@ -405,7 +405,7 @@ const Navbar: FC = () => {
                                   key={option.name}
                                   as={Link}
                                   href={option.href}
-                                  className="flex items-center gap-3 w-full rounded-md px-4 py-2 text-sm text-white hover:bg-[#0f2b49]/60"
+                                  className="flex items-center gap-3 w-full rounded-md px-4 py-2 text-sm text-[#17416E] hover:bg-[#17416E]/10"
                                 >
                                   <Icon className="h-4 w-4 flex-shrink-0" />
                                   {option.name}
@@ -422,7 +422,7 @@ const Navbar: FC = () => {
                       <div key={item.name} className="py-2">
                         <button
                           onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                          className="flex items-center justify-between w-full rounded-md px-4 py-3 text-base font-medium text-white hover:bg-[#0f2b49]/60"
+                          className="flex items-center justify-between w-full rounded-md px-4 py-3 text-base font-medium text-[#17416E] hover:bg-[#17416E]/10"
                         >
                           <div className="flex items-center gap-3">
                             <Wrench className="h-5 w-5 flex-shrink-0" />
@@ -442,7 +442,7 @@ const Navbar: FC = () => {
                           <div className="overflow-hidden space-y-4 mt-2 pl-4 origin-top">
                             {/* Interior Services */}
                             <div>
-                              <div className="px-4 text-xs font-medium text-gray-300 uppercase tracking-wider">Home & Interior</div>
+                              <div className="px-4 text-xs font-medium text-[#17416E]/70 uppercase tracking-wider">Home & Interior</div>
                               <div className="mt-1 space-y-1">
                                 {serviceOptions
                                   .filter(option => option.category === 'interior')
@@ -453,7 +453,7 @@ const Navbar: FC = () => {
                                         key={option.name}
                                         as={Link}
                                         href={option.href}
-                                        className="flex items-center gap-3 w-full rounded-md px-4 py-2 text-sm text-white hover:bg-[#0f2b49]/60"
+                                        className="flex items-center gap-3 w-full rounded-md px-4 py-2 text-sm text-[#17416E] hover:bg-[#17416E]/10"
                                       >
                                         <Icon className="h-4 w-4 flex-shrink-0" />
                                         {option.name}
@@ -465,7 +465,7 @@ const Navbar: FC = () => {
 
                             {/* Kitchen & Bathroom */}
                             <div>
-                              <div className="px-4 text-xs font-medium text-gray-300 uppercase tracking-wider">Kitchen & Bathroom</div>
+                              <div className="px-4 text-xs font-medium text-[#17416E]/70 uppercase tracking-wider">Kitchen & Bathroom</div>
                               <div className="mt-1 space-y-1">
                                 {serviceOptions
                                   .filter(option => option.category === 'kitchen' || option.category === 'bathroom')
@@ -476,7 +476,7 @@ const Navbar: FC = () => {
                                         key={option.name}
                                         as={Link}
                                         href={option.href}
-                                        className="flex items-center gap-3 w-full rounded-md px-4 py-2 text-sm text-white hover:bg-[#0f2b49]/60"
+                                        className="flex items-center gap-3 w-full rounded-md px-4 py-2 text-sm text-[#17416E] hover:bg-[#17416E]/10"
                                       >
                                         <Icon className="h-4 w-4 flex-shrink-0" />
                                         {option.name}
@@ -488,7 +488,7 @@ const Navbar: FC = () => {
 
                             {/* Construction & Exterior */}
                             <div>
-                              <div className="px-4 text-xs font-medium text-gray-300 uppercase tracking-wider">Construction & Exterior</div>
+                              <div className="px-4 text-xs font-medium text-[#17416E]/70 uppercase tracking-wider">Construction & Exterior</div>
                               <div className="mt-1 space-y-1">
                                 {serviceOptions
                                   .filter(option => option.category === 'construction')
@@ -499,7 +499,7 @@ const Navbar: FC = () => {
                                         key={option.name}
                                         as={Link}
                                         href={option.href}
-                                        className="flex items-center gap-3 w-full rounded-md px-4 py-2 text-sm text-white hover:bg-[#0f2b49]/60"
+                                        className="flex items-center gap-3 w-full rounded-md px-4 py-2 text-sm text-[#17416E] hover:bg-[#17416E]/10"
                                       >
                                         <Icon className="h-4 w-4 flex-shrink-0" />
                                         {option.name}
@@ -511,25 +511,25 @@ const Navbar: FC = () => {
 
                             {/* Additional Services */}
                             <div>
-                              <div className="px-4 text-xs font-medium text-gray-300 uppercase tracking-wider">Additional Services</div>
+                              <div className="px-4 text-xs font-medium text-[#17416E]/70 uppercase tracking-wider">Additional Services</div>
                               <div className="mt-1 space-y-1">
                                 {serviceOptions
                                   .filter(option => option.category === 'additional')
                                   .map((option) => {
-                            const Icon = option.icon;
-                            return (
-                              <Disclosure.Button
-                                key={option.name}
-                                as={Link}
-                                href={option.href}
-                                className="flex items-center gap-3 w-full rounded-md px-4 py-2 text-sm text-white hover:bg-[#0f2b49]/60"
-                              >
-                                <Icon className="h-4 w-4 flex-shrink-0" />
-                                {option.name}
-                              </Disclosure.Button>
-                            );
-                          })}
-                        </div>
+                                    const Icon = option.icon;
+                                    return (
+                                      <Disclosure.Button
+                                        key={option.name}
+                                        as={Link}
+                                        href={option.href}
+                                        className="flex items-center gap-3 w-full rounded-md px-4 py-2 text-sm text-[#17416E] hover:bg-[#17416E]/10"
+                                      >
+                                        <Icon className="h-4 w-4 flex-shrink-0" />
+                                        {option.name}
+                                      </Disclosure.Button>
+                                    );
+                                  })}
+                              </div>
                             </div>
                           </div>
                         </Transition>
@@ -546,8 +546,8 @@ const Navbar: FC = () => {
                       className={`
                         flex items-center gap-3 w-full rounded-md px-4 py-3 text-base font-medium
                         ${isCurrentPath(item.href)
-                          ? 'bg-[#0f2b49] text-white'
-                          : 'text-white hover:bg-[#0f2b49]/60'
+                          ? 'bg-[#17416E] text-white'
+                          : 'text-[#17416E] hover:bg-[#17416E]/10'
                         }
                         transition-all duration-200 ease-in-out active:scale-95
                       `}
