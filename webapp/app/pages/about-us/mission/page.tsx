@@ -27,7 +27,6 @@ export default function CompanyMission() {
     <div className="min-h-screen bg-white">
       {/* Hero Section with Pattern */}
       <div className="relative bg-[#287593]">
-        <div className="absolute inset-0 bg-[linear-gradient(#3C89A8_2px,transparent_2px),linear-gradient(90deg,#3C89A8_2px,transparent_2px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="space-y-2">
             <nav className="flex" aria-label="Breadcrumb">
