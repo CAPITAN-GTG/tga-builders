@@ -13,6 +13,12 @@ const ContactForm = () => {
     privacyConsent: false
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
   const formatPhoneNumber = (value: string) => {
     // Remove all non-numeric characters
     const phoneNumber = value.replace(/\D/g, '');
@@ -27,10 +33,48 @@ const ContactForm = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        storeConsent: false,
+        privacyConsent: false
+      });
+
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank you for your message! We will get back to you soon.'
+      });
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: error instanceof Error ? error.message : 'Failed to send message. Please try again.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -63,6 +107,16 @@ const ContactForm = () => {
         </div>
 
         <div className="mt-12 max-w-xl mx-auto">
+          {submitStatus.type && (
+            <div className={`mb-6 p-4 rounded-md ${
+              submitStatus.type === 'success' 
+                ? 'bg-green-50 text-green-800 border border-green-200' 
+                : 'bg-red-50 text-red-800 border border-red-200'
+            }`}>
+              {submitStatus.message}
+            </div>
+          )}
+
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Name Input */}
             <div>
@@ -78,6 +132,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 className={inputClasses}
                 placeholder="Your full name"
+                disabled={isSubmitting}
               />
             </div>
 
@@ -95,6 +150,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 className={inputClasses}
                 placeholder="your.email@example.com"
+                disabled={isSubmitting}
               />
             </div>
 
@@ -113,6 +169,7 @@ const ContactForm = () => {
                 maxLength={14}
                 className={inputClasses}
                 placeholder="(555) 555-5555"
+                disabled={isSubmitting}
               />
             </div>
 
@@ -130,6 +187,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 className={`${inputClasses} resize-y min-h-[120px]`}
                 placeholder="Please type your message here..."
+                disabled={isSubmitting}
               />
             </div>
 
@@ -145,6 +203,7 @@ const ContactForm = () => {
                     checked={formData.storeConsent}
                     onChange={handleCheckboxChange}
                     className="h-5 w-5 rounded border-gray-300 text-cyan-600 focus:ring-cyan-500"
+                    disabled={isSubmitting}
                   />
                 </div>
                 <label htmlFor="storeConsent" className="ml-3 text-sm text-gray-600">
@@ -162,6 +221,7 @@ const ContactForm = () => {
                     checked={formData.privacyConsent}
                     onChange={handleCheckboxChange}
                     className="h-5 w-5 rounded border-gray-300 text-cyan-600 focus:ring-cyan-500"
+                    disabled={isSubmitting}
                   />
                 </div>
                 <label htmlFor="privacyConsent" className="ml-3 text-sm text-gray-600">
@@ -174,10 +234,22 @@ const ContactForm = () => {
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full flex justify-center items-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-white bg-[#17416E] hover:bg-white hover:text-[#17416E] hover:border hover:border-[#17416E] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 transition-colors duration-300 group"
+                disabled={isSubmitting}
+                className={`w-full flex justify-center items-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-white bg-[#17416E] hover:bg-white hover:text-[#17416E] hover:border hover:border-[#17416E] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 transition-colors duration-300 group ${
+                  isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
+                }`}
               >
-                Submit Form
-                <Send className="ml-2 h-5 w-5 transition-transform duration-1000 group-hover:rotate-360" />
+                {isSubmitting ? (
+                  <>
+                    Sending...
+                    <Send className="ml-2 h-5 w-5 animate-spin" />
+                  </>
+                ) : (
+                  <>
+                    Submit Form
+                    <Send className="ml-2 h-5 w-5 transition-transform duration-1000 group-hover:rotate-360" />
+                  </>
+                )}
               </button>
             </div>
           </form>

@@ -39,13 +39,13 @@ const Footer = () => {
                 <Phone className="h-5 w-5" />
                 <span>(747) 303-8403</span>
               </a>
+              <a href="tel:+17027553316" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
+                <Phone className="h-5 w-5" />
+                <span>(702) 755-3316</span>
+              </a>
               <a href="mailto:tgabuildersinc@gmail.com" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
                 <Mail className="h-5 w-5" />
                 <span>tgabuildersinc@gmail.com</span>
-              </a>
-              <a href="mailto:team@tgabuildersinc.com" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
-                <Mail className="h-5 w-5" />
-                <span>team@tgabuildersinc.com</span>
               </a>
               <a href="https://maps.google.com/?q=14120 Pierce St, Arleta, CA 91331" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:text-cyan-400 transition-colors duration-300 group">
                 <MapPin className="h-5 w-5 mt-1 flex-shrink-0" />
@@ -74,8 +74,7 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-white text-lg font-semibold">RESOURCES</h3>
             <nav className="space-y-4">
-              <Link href="/pages/faq" className="block hover:text-cyan-400 transition-colors duration-300">FAQ</Link>
-              <Link href="/pages/terms" className="block hover:text-cyan-400 transition-colors duration-300">Terms and Condition</Link>
+              <Link href="/pages/terms" className="block hover:text-cyan-400 transition-colors duration-300">Terms of Service</Link>
               <Link href="/pages/privacy" className="block hover:text-cyan-400 transition-colors duration-300">Privacy Policy</Link>
             </nav>
           </div>
@@ -118,7 +117,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-4 text-sm">
               <Link href="/pages/terms" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
-                Terms & Condition
+                Terms of service
               </Link>
               <span className="text-gray-600">|</span>
               <Link href="/pages/privacy" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
