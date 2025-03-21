@@ -64,7 +64,7 @@ export async function POST(request: Request) {
     const userMailOptions = {
       from: process.env.EMAIL_USER,
       to: email,
-      subject: 'Thank You for Contacting TGA Builders Inc.',
+      subject: "We've Received Your Inquiry – Thank You!",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
           <!-- Header with Logo -->
@@ -74,36 +74,31 @@ export async function POST(request: Request) {
 
           <!-- Main Content -->
           <div style="background-color: #f8f9fa; padding: 30px; border-radius: 6px; border-left: 4px solid #17416E;">
-            <h2 style="color: #17416E; margin-top: 0; text-align: center;">Thank You for Contacting TGA Builders Inc.</h2>
+            <p style="font-size: 16px; line-height: 1.6; color: #333;">Hi ${name.split(' ')[0]},</p>
             
-            <p style="font-size: 16px; line-height: 1.6; color: #333;">Dear ${name},</p>
-            
-            <p style="font-size: 16px; line-height: 1.6; color: #333;">Thank you for reaching out to TGA Builders Inc. We have received your message and will get back to you as soon as possible.</p>
+            <p style="font-size: 16px; line-height: 1.6; color: #333;">Thank you for reaching out to TGA Builders Inc.! We're excited to learn more about your project and how we can bring your vision to life. One of our team members will be in touch soon.</p>
             
             <div style="background-color: #ffffff; padding: 20px; border-radius: 6px; margin: 20px 0; border: 1px solid #e2e8f0;">
-              <h3 style="color: #17416E; margin-top: 0;">Your Inquiry Summary</h3>
+              <h3 style="color: #17416E; margin-top: 0; margin-bottom: 15px;">At TGA Builders Inc., we believe in:</h3>
               <ul style="list-style: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 10px; display: flex; align-items: center;">
-                  <span style="color: #17416E; margin-right: 10px;">👤</span>
-                  <strong>Name:</strong> ${name}
+                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                  <span style="color: #17416E; margin-right: 10px; font-size: 20px;">🏡</span>
+                  <span style="font-size: 16px; line-height: 1.6;">Delivering exceptional craftsmanship and attention to detail</span>
                 </li>
-                <li style="margin-bottom: 10px; display: flex; align-items: center;">
-                  <span style="color: #17416E; margin-right: 10px;">📞</span>
-                  <strong>Phone:</strong> ${phone}
+                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                  <span style="color: #17416E; margin-right: 10px; font-size: 20px;">⚡</span>
+                  <span style="font-size: 16px; line-height: 1.6;">Completing projects on time and within budget</span>
                 </li>
-                <li style="margin-bottom: 10px; display: flex; align-items: center;">
-                  <span style="color: #17416E; margin-right: 10px;">✉️</span>
-                  <strong>Email:</strong> ${email}
-                </li>
-                <li style="margin-bottom: 10px; display: flex; align-items: center;">
-                  <span style="color: #17416E; margin-right: 10px;">💬</span>
-                  <strong>Message:</strong> ${message}
+                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                  <span style="color: #17416E; margin-right: 10px; font-size: 20px;">🤝</span>
+                  <span style="font-size: 16px; line-height: 1.6;">Providing personalized solutions that fit your style and needs</span>
                 </li>
               </ul>
             </div>
 
-            <div style="text-align: center; margin: 30px 0;">
-              <p style="font-size: 16px; color: #333; margin-bottom: 15px;">If you have any immediate questions, please don't hesitate to call us at:</p>
+            <p style="font-size: 16px; line-height: 1.6; color: #333;">If you have any immediate questions, feel free to reply to this email or call us at:</p>
+            
+            <div style="text-align: center; margin: 20px 0;">
               <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
                 <div style="background-color: #17416E; color: white; padding: 10px 20px; border-radius: 6px; display: inline-flex; align-items: center;">
                   <span style="margin-right: 8px;">📞</span>
@@ -115,11 +110,13 @@ export async function POST(request: Request) {
                 </div>
               </div>
             </div>
+
+            <p style="font-size: 16px; line-height: 1.6; color: #333;">Looking forward to working with you!</p>
           </div>
 
           <!-- Footer -->
           <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
-            <p style="color: #666; margin: 0;">Best regards,<br>The TGA Builders Inc. Team</p>
+            <p style="color: #666; margin: 0;">Best,<br>TGA Builders Inc.</p>
             <div style="margin-top: 20px;">
               <img src="https://tgabuildersinc.com/logo.PNG" alt="TGA Builders Inc. Logo" style="max-width: 150px; height: auto;">
             </div>
