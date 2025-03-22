@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { AlertTriangle, PhoneIcon } from 'lucide-react';
 
@@ -73,7 +74,10 @@ export default function EmergencyServices() {
                   <p className="text-gray-900 font-medium">(747) 303-8403</p>
                 </div>
               </div>
-              <button className="w-full bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700 transition-colors">
+              <button 
+                className="w-full bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700 transition-colors"
+                onClick={() => window.location.href = 'tel:7473038403'}
+              >
                 Call Now
               </button>
             </div>

@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     // Email content for company notification
     const companyMailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'tgabuildersinc@gmail.com',
+      to: process.env.EMAIL_USER,
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
@@ -66,60 +66,40 @@ export async function POST(request: Request) {
       to: email,
       subject: "We've Received Your Inquiry – Thank You!",
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-          <!-- Header with Logo -->
-          <div style="text-align: center; margin-bottom: 30px;">
-            <img src="https://tgabuildersinc.com/logo.PNG" alt="TGA Builders Inc. Logo" style="max-width: 200px; height: auto;">
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff;">
+          <p style="font-size: 16px; line-height: 1.6; color: #333;">Hi ${name.split(' ')[0]},</p>
+          
+          <p style="font-size: 16px; line-height: 1.6; color: #333;">Thank you for reaching out to TGA Builders Inc.! We're excited to learn more about your project and how we can bring your vision to life. One of our team members will be in touch soon.</p>
+          
+          <p style="font-size: 16px; line-height: 1.6; color: #333;">At TGA Builders Inc., we believe in:</p>
+          
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+              <span style="margin-right: 10px; font-size: 20px;">🏡</span>
+              <span style="font-size: 16px; line-height: 1.6;">Delivering exceptional craftsmanship and attention to detail</span>
+            </li>
+            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+              <span style="margin-right: 10px; font-size: 20px;">⚡</span>
+              <span style="font-size: 16px; line-height: 1.6;">Completing projects on time and within budget</span>
+            </li>
+            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+              <span style="margin-right: 10px; font-size: 20px;">🤝</span>
+              <span style="font-size: 16px; line-height: 1.6;">Providing personalized solutions that fit your style and needs</span>
+            </li>
+          </ul>
+
+          <p style="font-size: 16px; line-height: 1.6; color: #333;">If you have any immediate questions, feel free to reply to this email or call us at:</p>
+          
+          <div style="margin: 20px 0;">
+            <p style="font-size: 16px; line-height: 1.6; color: #333;">(747) 303-8403</p>
           </div>
 
-          <!-- Main Content -->
-          <div style="background-color: #f8f9fa; padding: 30px; border-radius: 6px; border-left: 4px solid #17416E;">
-            <p style="font-size: 16px; line-height: 1.6; color: #333;">Hi ${name.split(' ')[0]},</p>
-            
-            <p style="font-size: 16px; line-height: 1.6; color: #333;">Thank you for reaching out to TGA Builders Inc.! We're excited to learn more about your project and how we can bring your vision to life. One of our team members will be in touch soon.</p>
-            
-            <div style="background-color: #ffffff; padding: 20px; border-radius: 6px; margin: 20px 0; border: 1px solid #e2e8f0;">
-              <h3 style="color: #17416E; margin-top: 0; margin-bottom: 15px;">At TGA Builders Inc., we believe in:</h3>
-              <ul style="list-style: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                  <span style="color: #17416E; margin-right: 10px; font-size: 20px;">🏡</span>
-                  <span style="font-size: 16px; line-height: 1.6;">Delivering exceptional craftsmanship and attention to detail</span>
-                </li>
-                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                  <span style="color: #17416E; margin-right: 10px; font-size: 20px;">⚡</span>
-                  <span style="font-size: 16px; line-height: 1.6;">Completing projects on time and within budget</span>
-                </li>
-                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                  <span style="color: #17416E; margin-right: 10px; font-size: 20px;">🤝</span>
-                  <span style="font-size: 16px; line-height: 1.6;">Providing personalized solutions that fit your style and needs</span>
-                </li>
-              </ul>
-            </div>
-
-            <p style="font-size: 16px; line-height: 1.6; color: #333;">If you have any immediate questions, feel free to reply to this email or call us at:</p>
-            
-            <div style="text-align: center; margin: 20px 0;">
-              <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <div style="background-color: #17416E; color: white; padding: 10px 20px; border-radius: 6px; display: inline-flex; align-items: center;">
-                  <span style="margin-right: 8px;">📞</span>
-                  <strong>(747) 303-8403</strong>
-                </div>
-                <div style="background-color: #17416E; color: white; padding: 10px 20px; border-radius: 6px; display: inline-flex; align-items: center;">
-                  <span style="margin-right: 8px;">📞</span>
-                  <strong>(702) 755-3316</strong>
-                </div>
-              </div>
-            </div>
-
-            <p style="font-size: 16px; line-height: 1.6; color: #333;">Looking forward to working with you!</p>
-          </div>
-
-          <!-- Footer -->
-          <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
-            <p style="color: #666; margin: 0;">Best,<br>TGA Builders Inc.</p>
-            <div style="margin-top: 20px;">
-              <img src="https://tgabuildersinc.com/logo.PNG" alt="TGA Builders Inc. Logo" style="max-width: 150px; height: auto;">
-            </div>
+          <p style="font-size: 16px; line-height: 1.6; color: #333;">Looking forward to working with you!</p>
+          
+          <p style="font-size: 16px; line-height: 1.6; color: #333;">Best,<br>TGA Builders Inc.</p>
+          
+          <div style="margin-top: 20px;">
+            <img src="https://tgabuildersinc.com/logo.PNG" alt="TGA Builders Inc. Logo" style="max-width: 150px; height: auto;">
           </div>
         </div>
       `,

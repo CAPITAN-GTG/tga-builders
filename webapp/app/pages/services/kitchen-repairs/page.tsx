@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { Utensils, PhoneIcon, Droplet, Hammer, Grid2X2, Wrench } from 'lucide-react';
 import Image from 'next/image';
@@ -105,7 +106,9 @@ export default function KitchenRepairs() {
                   <p className="text-gray-900 font-medium">702-755-3316</p>
                 </div>
               </div>
-              <button className="w-full bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-cyan-700 transition-colors">
+              <button className="w-full bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-cyan-700 transition-colors"
+              onClick={() => window.location.href = 'tel:7473038403'}
+              >
                 Request a Quote
               </button>
             </div>

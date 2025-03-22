@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { MapPin, PhoneIcon } from 'lucide-react';
 
@@ -25,8 +26,7 @@ export default function ServiceAreas() {
           <div className="space-y-6">
             <h2 className="text-2xl font-semibold text-gray-900">Areas We Serve</h2>
             <p className="text-gray-600">
-              TGA Builders is proud to serve residential and commercial clients throughout 
-              Los Angeles County. Our service area includes major cities and surrounding 
+              TGA Builders is proud to serve residential and commercial clients in All California. Our service area includes major cities and surrounding 
               communities.
             </p>
             <div className="bg-white shadow-sm rounded-lg p-6">
@@ -73,7 +73,10 @@ export default function ServiceAreas() {
                   <p className="text-gray-900 font-medium">(747) 303-8403</p>
                 </div>
               </div>
-              <button className="w-full bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-cyan-700 transition-colors">
+              <button 
+                className="w-full bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-cyan-700 transition-colors"
+                onClick={() => window.location.href = 'tel:7473038403'}
+              >
                 Check Availability
               </button>
             </div>

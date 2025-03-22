@@ -185,10 +185,10 @@ const AboutUs = () => {
             Need professional services? We're here to help!
           </p>
           <a 
-            href="tel:+17027553316" 
+            href="tel:7473038403" 
             className="inline-flex items-center text-lg font-semibold text-gray-900 hover:text-gray-600 transition-colors"
           >
-            (702) 755-3316
+            (747) 303-8403
           </a>
         </div>
       </div>

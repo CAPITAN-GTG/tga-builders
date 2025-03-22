@@ -94,7 +94,7 @@ const Reviews = () => {
               <p className="text-gray-600 mt-1">Read our verified customer reviews on Google</p>
             </div>
             <a
-              href="https://www.google.com/search?q=tga+handyman+services#lrd=0x80c8cf0ad4800159:0x439a74f6254da7ec,1"
+              href="https://www.google.com/search?q=tga+builders+inc+reviews&sca_esv=c29d84b229fa45c6&sxsrf=AHTn8zrUXvIeCshx_s3okpXToP6t6eluEA%3A1742663594344&ei=qu_eZ6jYFPLdkPIPu9DRwAk&ved=0ahUKEwio1YPkl56MAxXyLkQIHTtoFJgQ4dUDCBA&uact=5&oq=tga+builders+inc+reviews&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIhh0Z2EgYnVpbGRlcnMgaW5jIHJldmlld3MyBRAhGKABMgUQIRigAUjUYFDNEFj-X3AIeAGQAQCYAYgCoAGwHKoBBjMwLjcuMbgBA8gBAPgBAZgCKqACuhuoAgrCAgoQABiwAxjWBBhHwgITEC4YgAQYsAMYQxjHARiKBRivAcICBhAAGAcYHsICCxAAGIAEGIYDGIoFwgIIEAAYgAQYogTCAgUQABjvBcICCBAhGKABGMMEwgIHECMYJxjqAsICChAjGPAFGCcY6gLCAgoQIxiABBgnGIoFwgIQEC4YgAQY0QMYQxjHARiKBcICEBAuGIAEGEMYxwEYigUYrwHCAg4QLhiABBixAxjRAxjHAcICERAAGIAEGLEDGIMBGIoFGIsDwgIXEC4YgAQYsQMYgwEYqAMYigUYiwMYngPCAg4QABiABBixAxiDARiLA8ICERAuGIAEGLEDGNEDGIMBGMcBwgILEAAYgAQYsQMYiwPCAg0QABiABBhDGIoFGIsDwgIXEC4YgAQYsQMY0QMY0gMYxwEYqAMYiwPCAhAQLhiABBgUGIcCGMcBGK8BwgIIEC4YgAQYsQPCAgsQABiABBixAxiDAcICChAAGIAEGEMYigXCAhMQLhiABBixAxjRAxhDGMcBGIoFwgILEC4YgAQYxwEYrwHCAggQABiABBixA8ICChAAGIAEGBQYhwLCAgUQABiABMICCBAAGIAEGIsDwgIGEAAYFhgewgIHEC4YgAQYDcICBxAAGIAEGA3CAgcQIRigARgKwgIIEAAYogQYiQXCAgUQIRirAsICBRAhGJ8FmAMH8QXjAve-9vRBzogGAZAGBJIHBjMyLjkuMaAH7ocCsgcGMjQuOS4xuAeGGw&sclient=gws-wiz-serp#lrd=0x80c291d8182e1b9b:0xae5e95e3705dbc53,1,,,,"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#17416E] text-white px-4 py-2 rounded-md hover:bg-[#0f2b49] transition-colors duration-300"
@@ -136,7 +136,7 @@ const Reviews = () => {
                 Contact Us Today
               </a>
               <a
-                href="https://www.google.com/search?q=tga+handyman+services#lrd=0x80c8cf0ad4800159:0x439a74f6254da7ec,1"
+                href="https://www.google.com/search?q=tga+builders+inc+reviews&sca_esv=c29d84b229fa45c6&sxsrf=AHTn8zrUXvIeCshx_s3okpXToP6t6eluEA%3A1742663594344&ei=qu_eZ6jYFPLdkPIPu9DRwAk&ved=0ahUKEwio1YPkl56MAxXyLkQIHTtoFJgQ4dUDCBA&uact=5&oq=tga+builders+inc+reviews&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIhh0Z2EgYnVpbGRlcnMgaW5jIHJldmlld3MyBRAhGKABMgUQIRigAUjUYFDNEFj-X3AIeAGQAQCYAYgCoAGwHKoBBjMwLjcuMbgBA8gBAPgBAZgCKqACuhuoAgrCAgoQABiwAxjWBBhHwgITEC4YgAQYsAMYQxjHARiKBRivAcICBhAAGAcYHsICCxAAGIAEGIYDGIoFwgIIEAAYgAQYogTCAgUQABjvBcICCBAhGKABGMMEwgIHECMYJxjqAsICChAjGPAFGCcY6gLCAgoQIxiABBgnGIoFwgIQEC4YgAQY0QMYQxjHARiKBcICEBAuGIAEGEMYxwEYigUYrwHCAg4QLhiABBixAxjRAxjHAcICERAAGIAEGLEDGIMBGIoFGIsDwgIXEC4YgAQYsQMYgwEYqAMYigUYiwMYngPCAg4QABiABBixAxiDARiLA8ICERAuGIAEGLEDGNEDGIMBGMcBwgILEAAYgAQYsQMYiwPCAg0QABiABBhDGIoFGIsDwgIXEC4YgAQYsQMY0QMY0gMYxwEYqAMYiwPCAhAQLhiABBgUGIcCGMcBGK8BwgIIEC4YgAQYsQPCAgsQABiABBixAxiDAcICChAAGIAEGEMYigXCAhMQLhiABBixAxjRAxhDGMcBGIoFwgILEC4YgAQYxwEYrwHCAggQABiABBixA8ICChAAGIAEGBQYhwLCAgUQABiABMICCBAAGIAEGIsDwgIGEAAYFhgewgIHEC4YgAQYDcICBxAAGIAEGA3CAgcQIRigARgKwgIIEAAYogQYiQXCAgUQIRirAsICBRAhGJ8FmAMH8QXjAve-9vRBzogGAZAGBJIHBjMyLjkuMaAH7ocCsgcGMjQuOS4xuAeGGw&sclient=gws-wiz-serp#lrd=0x80c291d8182e1b9b:0xae5e95e3705dbc53,1,,,,"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-[#17416E] hover:text-[#0f2b49] transition-colors duration-300"
