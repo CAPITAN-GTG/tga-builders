@@ -103,14 +103,26 @@ export default function KitchenRepairs() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Call us at</p>
-                  <p className="text-gray-900 font-medium">702-755-3316</p>
+                  <div className="space-y-1">
+                    <p className="text-gray-900 font-medium">(702) 755-3316</p>
+                    <p className="text-gray-900 font-medium">(747) 303-8403</p>
+                  </div>
                 </div>
               </div>
-              <button className="w-full bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-cyan-700 transition-colors"
-              onClick={() => window.location.href = 'tel:7473038403'}
-              >
-                Request a Quote
-              </button>
+              <div className="grid grid-cols-2 gap-3">
+                <button 
+                  className="w-full bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-cyan-700 transition-colors"
+                  onClick={() => window.location.href = 'tel:7027553316'}
+                >
+                  Call (702)
+                </button>
+                <button 
+                  className="w-full bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-cyan-700 transition-colors"
+                  onClick={() => window.location.href = 'tel:7473038403'}
+                >
+                  Call (747)
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -125,12 +125,21 @@ export default function CompanyMission() {
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-1">Ready to Experience Our Service?</h3>
               <p className="text-gray-600 mb-2">Contact us today to learn more about how we can help.</p>
-              <a 
-                href="tel:+17027553316" 
-                className="text-xl font-semibold text-gray-900 hover:text-cyan-600 transition-colors"
-              >
-                (702) 755-3316
-              </a>
+              <div className="flex flex-row items-center gap-4">
+                <a 
+                  href="tel:7473038403" 
+                  className="inline-flex items-center text-lg font-semibold text-black rounded-full px-4 py-1 hover:text-white hover:bg-black transition-all duration-500"
+                >
+                  (747) 303-8403
+                </a>
+                <span className="text-black">or</span>
+                <a 
+                  href="tel:7027553316" 
+                  className="inline-flex items-center text-lg font-semibold text-black rounded-full px-4 py-1 hover:text-white hover:bg-black transition-all duration-500"
+                >
+                  (702) 755-3316
+                </a>
+              </div>
             </div>
           </div>
         </div>

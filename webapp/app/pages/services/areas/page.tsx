@@ -38,19 +38,35 @@ export default function ServiceAreas() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-cyan-600"></span>
-                  San Fernando Valley
+                  San Fernando
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-cyan-600"></span>
-                  Santa Clarita Valley
+                  Santa Clarita
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-cyan-600"></span>
-                  Glendale & Burbank
+                  Glendale
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-cyan-600"></span>
-                  Surrounding Communities
+                  Burbank
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-600"></span>
+                  Orange County
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-600"></span>
+                  San Bernardino County
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-600"></span>
+                  Ventura County
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-600"></span>
+                  And more in the state of California
                 </li>
               </ul>
             </div>
@@ -70,15 +86,26 @@ export default function ServiceAreas() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Call us at</p>
-                  <p className="text-gray-900 font-medium">(747) 303-8403</p>
+                  <div className="space-y-1">
+                    <p className="text-gray-900 font-medium">(702) 755-3316</p>
+                    <p className="text-gray-900 font-medium">(747) 303-8403</p>
+                  </div>
                 </div>
               </div>
-              <button 
-                className="w-full bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-cyan-700 transition-colors"
-                onClick={() => window.location.href = 'tel:7473038403'}
-              >
-                Check Availability
-              </button>
+              <div className="grid grid-cols-2 gap-3">
+                <button 
+                  className="w-full bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-cyan-700 transition-colors"
+                  onClick={() => window.location.href = 'tel:7027553316'}
+                >
+                  Call (702)
+                </button>
+                <button 
+                  className="w-full bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-cyan-700 transition-colors"
+                  onClick={() => window.location.href = 'tel:7473038403'}
+                >
+                  Call (747)
+                </button>
+              </div>
             </div>
           </div>
         </div>

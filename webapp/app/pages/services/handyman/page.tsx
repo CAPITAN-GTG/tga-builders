@@ -145,18 +145,32 @@ export default function HandymanServices() {
               Contact us today to discuss your handyman service needs. We offer free estimates and 
               can help you plan your home improvement or repair project.
             </p>
-            <div className="inline-flex items-center gap-3">
-              <div className="h-12 w-12 rounded-full bg-cyan-100 flex items-center justify-center">
-                <Phone className="h-6 w-6 text-cyan-600" />
+            <div className="space-y-4">
+              <div className="flex items-center justify-center gap-3">
+                <div className="h-12 w-12 rounded-full bg-cyan-100 flex items-center justify-center">
+                  <Phone className="h-6 w-6 text-cyan-600" />
+                </div>
+                <div className="text-left">
+                  <p className="text-sm text-gray-500">Call us at</p>
+                  <div className="space-y-1">
+                    <p className="text-gray-900 font-medium">(702) 755-3316</p>
+                    <p className="text-gray-900 font-medium">(747) 303-8403</p>
+                  </div>
+                </div>
               </div>
-              <div className="text-left">
-                <p className="text-sm text-gray-500">Call us at</p>
-                <a 
-                  href="tel:+17027553316" 
-                  className="text-xl font-semibold text-gray-900 hover:text-cyan-600 transition-colors"
+              <div className="grid grid-cols-2 gap-3 max-w-md mx-auto">
+                <button 
+                  className="w-full bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-cyan-700 transition-colors"
+                  onClick={() => window.location.href = 'tel:7027553316'}
                 >
-                  (702) 755-3316
-                </a>
+                  Call (702)
+                </button>
+                <button 
+                  className="w-full bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-cyan-700 transition-colors"
+                  onClick={() => window.location.href = 'tel:7473038403'}
+                >
+                  Call (747)
+                </button>
               </div>
             </div>
           </div>

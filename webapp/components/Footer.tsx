@@ -33,25 +33,25 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Contact Info */}
           <div className="space-y-6">
-            <h3 className="text-white text-lg font-semibold">CONTACT INFO</h3>
+            <h3 className="text-white text-lg font-semibold text-center md:text-left">CONTACT INFO</h3>
             <div className="space-y-4">
-              <a href="tel:+17473038403" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
+              <a href="tel:+17473038403" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
                 <Phone className="h-5 w-5" />
                 <span>(747) 303-8403</span>
               </a>
-              <a href="tel:+17027553316" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
+              <a href="tel:+17027553316" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
                 <Phone className="h-5 w-5" />
                 <span>(702) 755-3316</span>
               </a>
-              <a href="mailto:tgabuildersinc@gmail.com" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
+              <a href="mailto:tgabuildersinc@gmail.com" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
                 <Mail className="h-5 w-5" />
                 <span>tgabuildersinc@gmail.com</span>
               </a>
-              <a href="https://maps.google.com/?q=14120 Pierce St, Arleta, CA 91331" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:text-cyan-400 transition-colors duration-300 group">
+              <a href="https://maps.google.com/?q=14120 Pierce St, Arleta, CA 91331" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300 group">
                 <MapPin className="h-5 w-5 mt-1 flex-shrink-0" />
-                <span>14120 Pierce St, Arleta, CA 91331</span>
+                <span className="text-center md:text-left">14120 Pierce St, Arleta, CA 91331</span>
               </a>
-              <div className="pt-2 border-t border-gray-800">
+              <div className="pt-2 border-t border-gray-800 text-center md:text-left">
                 <p className="text-sm">License 1126206</p>
                 <p className="text-sm">Classification(s) B General C27 C42</p>
               </div>
@@ -60,46 +60,46 @@ const Footer = () => {
 
           {/* Navigation */}
           <div className="space-y-6">
-            <h3 className="text-white text-lg font-semibold">NAVIGATE</h3>
+            <h3 className="text-white text-lg font-semibold text-center md:text-left">NAVIGATE</h3>
             <nav className="space-y-4">
-              <Link href="/" className="block hover:text-cyan-400 transition-colors duration-300">Home</Link>
-              <Link href="/pages/about-us" className="block hover:text-cyan-400 transition-colors duration-300">About Us</Link>
-              <Link href="/pages/reviews" className="block hover:text-cyan-400 transition-colors duration-300">Reviews</Link>
-              <Link href="/pages/gallery" className="block hover:text-cyan-400 transition-colors duration-300">Gallery</Link>
-              <Link href="/pages/contact-us" className="block hover:text-cyan-400 transition-colors duration-300">Contact</Link>
+              <Link href="/" className="block text-center md:text-left hover:text-cyan-400 transition-colors duration-300">Home</Link>
+              <Link href="/pages/about-us" className="block text-center md:text-left hover:text-cyan-400 transition-colors duration-300">About Us</Link>
+              <Link href="/pages/reviews" className="block text-center md:text-left hover:text-cyan-400 transition-colors duration-300">Reviews</Link>
+              <Link href="/pages/gallery" className="block text-center md:text-left hover:text-cyan-400 transition-colors duration-300">Gallery</Link>
+              <Link href="/pages/contact-us" className="block text-center md:text-left hover:text-cyan-400 transition-colors duration-300">Contact</Link>
             </nav>
           </div>
 
           {/* Resources */}
           <div className="space-y-6">
-            <h3 className="text-white text-lg font-semibold">RESOURCES</h3>
+            <h3 className="text-white text-lg font-semibold text-center md:text-left">RESOURCES</h3>
             <nav className="space-y-4">
-              <Link href="/pages/terms" className="block hover:text-cyan-400 transition-colors duration-300">Terms of Service</Link>
-              <Link href="/pages/privacy" className="block hover:text-cyan-400 transition-colors duration-300">Privacy Policy</Link>
+              <Link href="/pages/terms" className="block text-center md:text-left hover:text-cyan-400 transition-colors duration-300">Terms of Service</Link>
+              <Link href="/pages/privacy" className="block text-center md:text-left hover:text-cyan-400 transition-colors duration-300">Privacy Policy</Link>
             </nav>
           </div>
 
           {/* Social Media */}
           <div className="space-y-6">
-            <h3 className="text-white text-lg font-semibold">FOLLOW US</h3>
+            <h3 className="text-white text-lg font-semibold text-center md:text-left">FOLLOW US</h3>
             <div className="space-y-4">
-              <a href="#" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
+              <a href="#" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
                 <Facebook className="h-5 w-5" />
                 <span>Facebook</span>
               </a>
-              <a href="#" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
+              <a href="#" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
                 <XIcon />
                 <span>X</span>
               </a>
-              <a href="#" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
+              <a href="#" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
                 <Instagram className="h-5 w-5" />
                 <span>Instagram</span>
               </a>
-              <a href="#" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
+              <a href="#" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
                 <Youtube className="h-5 w-5" />
                 <span>YouTube</span>
               </a>
-              <a href="#" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
+              <a href="#" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
                 <Linkedin className="h-5 w-5" />
                 <span>LinkedIn</span>
               </a>

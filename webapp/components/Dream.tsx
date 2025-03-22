@@ -30,7 +30,7 @@ const Dream = () => {
           {/* Buttons */}
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/pages/services"
+              href="/pages/services/areas"
               className="inline-flex items-center px-8 py-3.5 text-base font-semibold text-white border-2 border-white/20 rounded-md hover:bg-white/10 transition-all duration-300 group"
             >
               Our Services
