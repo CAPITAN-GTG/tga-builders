@@ -81,7 +81,7 @@ const services = [
       'Tree trimming',
       'Clean yards lots etc.',
       'Paver installation',
-      'Bedrock tree',
+      'Landscaping Bedrock conversions',
       'Tree removal'
     ]
   },
