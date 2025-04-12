@@ -5,8 +5,7 @@ import {
   MapPin, 
   Facebook, 
   Instagram, 
-  Youtube, 
-  Linkedin,
+  MessageCircle,
   Image as ImageIcon,
   ExternalLink
 } from 'lucide-react';
@@ -83,26 +82,22 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-white text-lg font-semibold text-center md:text-left">FOLLOW US</h3>
             <div className="space-y-4">
-              <a href="#" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
+              <a href="https://www.facebook.com/profile.php?id=61575034021265&mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
                 <Facebook className="h-5 w-5" />
                 <span>Facebook</span>
               </a>
-              <a href="#" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
-                <XIcon />
-                <span>X</span>
-              </a>
-              <a href="#" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
+              <a href="https://www.instagram.com/tgabuildersinc?igsh=MTBpa2VhanBwaXg4OQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
                 <Instagram className="h-5 w-5" />
                 <span>Instagram</span>
               </a>
-              <a href="#" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
-                <Youtube className="h-5 w-5" />
-                <span>YouTube</span>
+              <a href="https://www.tiktok.com/@tgabuildersinc?_t=ZT-8vSEDJDadCQ&_r=1" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
+                <img src="/tiktok.jpeg" alt="TikTok" className="h-5 w-5 object-contain rounded-md invert" />
+                <span>TikTok</span>
               </a>
-              <a href="#" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
-                <Linkedin className="h-5 w-5" />
-                <span>LinkedIn</span>
-              </a>
+              <Link href="/pages/whatsapp" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
+                <MessageCircle className="h-5 w-5" />
+                <span>WhatsApp</span>
+              </Link>
             </div>
           </div>
         </div>
