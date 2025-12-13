@@ -78,7 +78,7 @@ const Gallery: React.FC = () => {
     {
       title: "Our Work in Action",
       description: "Watch our skilled team transform spaces and bring visions to life",
-      src: "/tga-video.mp4"
+      src: process.env.NEXT_PUBLIC_TGA_VIDEO_URL || "/tga-video.mp4"
     }
   ];
 
