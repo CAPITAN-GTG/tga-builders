@@ -14,7 +14,7 @@ const Reviews = () => {
       {/* Hero Section with Background Image */}
       <div className="relative h-[30vh] min-h-[300px] flex items-center justify-center">
         <Image
-          src="/gallery-28.png"
+          src="/gallery-28.webp"
           alt="TGA Builders Projects"
           fill
           className="object-cover"

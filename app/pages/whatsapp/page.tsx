@@ -10,7 +10,7 @@ const WhatsApp = () => {
         <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
           <div className="aspect-square bg-white rounded-full p-2 w-20 h-20 flex items-center justify-center">
             <Image 
-              src="/logo.png" 
+              src="/logo.webp" 
               alt="Logo" 
               width={64} 
               height={64}
@@ -28,7 +28,7 @@ const WhatsApp = () => {
           {/* QR Code */}
           <div className="flex justify-center mb-8">
             <Image 
-              src="/qr.jpeg" 
+              src="/qr.webp" 
               alt="WhatsApp QR Code" 
               width={300} 
               height={300}

@@ -91,7 +91,7 @@ const Footer = () => {
                 <span>Instagram</span>
               </a>
               <a href="https://www.tiktok.com/@tgabuildersinc?_t=ZT-8vSEDJDadCQ&_r=1" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
-                <img src="/tiktok.jpeg" alt="TikTok" className="h-5 w-5 object-contain rounded-md invert" />
+                <img src="/tiktok.webp" alt="TikTok" className="h-5 w-5 object-contain rounded-md invert" />
                 <span>TikTok</span>
               </a>
               <Link href="/pages/whatsapp" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">

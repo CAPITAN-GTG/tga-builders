@@ -8,7 +8,7 @@ const Dream = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: 'url("/dream.jpg")' }}
+        style={{ backgroundImage: 'url("/dream.webp")' }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 " />
       </div>

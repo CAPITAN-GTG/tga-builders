@@ -23,9 +23,16 @@ interface Video {
 const Gallery: React.FC = () => {
   // Generate array of 33 gallery images
   const galleryImages: GalleryImage[] = Array.from({ length: 33 }, (_, i) => ({
-    src: i < 30 ? `/gallery-${i + 1}.png` : `/landscape_${i - 29}.png`,
+    src: i < 30 ? `/gallery-${i + 1}.webp` : `/landscape_${i - 29}.webp`,
     alt: i < 30 ? `Gallery Project ${i + 1}` : `Landscape Project ${i - 29}`,
     description: i < 30 ? `Professional construction and design showcase ${i + 1}` : `Stunning landscape design and outdoor spaces ${i - 29}`
+  }));
+
+  // Add 24h Fitness Stone Walls images (gallery-31 through gallery-35)
+  const fitnessStoneWallsImages: GalleryImage[] = Array.from({ length: 5 }, (_, i) => ({
+    src: `/gallery-${31 + i}.webp`,
+    alt: `24h Fitness Stone Walls Project ${i + 1}`,
+    description: `Professional stone wall construction and design for 24h Fitness facility ${i + 1}`
   }));
 
   // Organize images into categories with more professional descriptions
@@ -59,6 +66,11 @@ const Gallery: React.FC = () => {
       category: 'Landscape Design',
       description: 'Beautiful outdoor spaces that enhance your property',
       images: galleryImages.slice(30, 33)
+    },
+    {
+      category: '24h Fitness Stone Walls',
+      description: 'Expert stone wall construction and design for commercial fitness facilities',
+      images: fitnessStoneWallsImages
     }
   ];
 
@@ -72,8 +84,9 @@ const Gallery: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Title Section */}
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <header className="text-center mb-16">
+        <header className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
             Project Gallery
           </h1>
@@ -81,61 +94,44 @@ const Gallery: React.FC = () => {
             Discover our exceptional work and craftsmanship through our extensive portfolio of completed projects
           </p>
         </header>
+      </div>
 
-        {/* Video Section */}
-        <section className="mb-20">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-8 pb-2 border-b-2 border-gray-200">
-            Featured Videos
-          </h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {videos.map((video, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-              >
-                <div className="relative pb-[56.25%] bg-gray-900">
-                  <video
-                    className="absolute top-0 left-0 w-full h-full object-contain"
-                    controls
-                    playsInline
-                    preload="metadata"
-                  >
-                    <source src={video.src} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-                    {video.title}
-                  </h3>
-                  <p className="text-gray-600 text-lg">
-                    {video.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+      {/* Video Section - Full Width Separator */}
+      <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-gray-900 mb-16">
+        {videos.map((video, index) => (
+          <div key={index} className="relative w-full max-h-[600px] flex items-center justify-center">
+            <video
+              className="w-full h-auto max-h-[600px] object-contain"
+              controls
+              playsInline
+              preload="metadata"
+            >
+              <source src={video.src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
-        </section>
+        ))}
+      </section>
 
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Image Sections */}
-        <div className="space-y-20">
+        <div className="space-y-16">
           {projects.map((project, projectIndex) => (
             <section key={projectIndex} className="scroll-mt-16" id={project.category.toLowerCase().replace(/\s+/g, '-')}>
-              <div className="mb-8">
-                <h2 className="text-3xl font-semibold text-gray-800 mb-3">
+              <div className="mb-6 pb-4 border-b border-gray-200">
+                <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2">
                   {project.category}
                 </h2>
-                <p className="text-gray-600 text-lg">
+                <p className="text-gray-600 text-sm md:text-base">
                   {project.description}
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
                 {project.images.map((image, imageIndex) => (
                   <div
                     key={imageIndex}
-                    className="group relative rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-gray-100"
+                    className="group relative rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl bg-gray-100"
                   >
                     <div className="relative aspect-[4/3]">
                       <Image
@@ -143,15 +139,15 @@ const Gallery: React.FC = () => {
                         alt={image.alt}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                         priority={projectIndex === 0 && imageIndex === 0}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                          <h3 className="text-white text-xl font-semibold mb-2">
+                        <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                          <h3 className="text-white text-sm font-semibold mb-1">
                             {image.alt}
                           </h3>
-                          <p className="text-white/90 text-sm">
+                          <p className="text-white/90 text-xs">
                             {image.description}
                           </p>
                         </div>

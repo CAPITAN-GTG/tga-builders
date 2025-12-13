@@ -52,7 +52,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
           >
             <div className="relative w-full aspect-[16/10]">
               <Image
-                src={`/gallery-${num}.png`}
+                src={`/gallery-${num}.webp`}
                 alt={`TGA Builders Project ${num}`}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
@@ -87,7 +87,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <Image
-                  src={`/gallery-${images[selectedImage]}.png`}
+                  src={`/gallery-${images[selectedImage]}.webp`}
                   alt={`TGA Builders Project ${images[selectedImage]}`}
                   fill
                   className="object-contain"

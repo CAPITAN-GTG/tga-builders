@@ -295,7 +295,7 @@ const Navbar: FC = () => {
               <div className="flex-shrink-0">
                 <Link href="/" className="block">
                   <img 
-                    src="/logo.png" 
+                    src="/logo.webp" 
                     alt="TGA Builders Logo" 
                     className="h-16 w-auto hover:scale-105 transition-transform duration-300 ease-in-out" 
                   />
