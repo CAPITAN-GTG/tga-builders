@@ -3,12 +3,32 @@ import {
   Phone, 
   Mail, 
   MapPin, 
-  Facebook, 
-  Instagram, 
   MessageCircle,
   Image as ImageIcon,
   ExternalLink
 } from 'lucide-react';
+
+const FacebookIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+    className={className}
+  >
+    <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.027 1.792-4.699 4.533-4.699 1.312 0 2.686.236 2.686.236v2.97h-1.512c-1.49 0-1.953.934-1.953 1.89v2.263h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
+  </svg>
+);
+
+const InstagramIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+    className={className}
+  >
+    <path d="M7.5 0h9A7.5 7.5 0 0 1 24 7.5v9a7.5 7.5 0 0 1-7.5 7.5h-9A7.5 7.5 0 0 1 0 16.5v-9A7.5 7.5 0 0 1 7.5 0Zm0 2A5.5 5.5 0 0 0 2 7.5v9A5.5 5.5 0 0 0 7.5 22h9a5.5 5.5 0 0 0 5.5-5.5v-9A5.5 5.5 0 0 0 16.5 2h-9ZM12 6.2A5.8 5.8 0 1 1 6.2 12 5.8 5.8 0 0 1 12 6.2Zm0 2A3.8 3.8 0 1 0 15.8 12 3.8 3.8 0 0 0 12 8.2Zm6.3-2.65a1.35 1.35 0 1 1-1.35-1.35 1.35 1.35 0 0 1 1.35 1.35Z" />
+  </svg>
+);
 
 const XIcon = () => (
   <svg
@@ -83,11 +103,11 @@ const Footer = () => {
             <h3 className="text-white text-lg font-semibold text-center md:text-left">FOLLOW US</h3>
             <div className="space-y-4">
               <a href="https://www.facebook.com/profile.php?id=61575034021265&mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
-                <Facebook className="h-5 w-5" />
+                <FacebookIcon className="h-5 w-5" />
                 <span>Facebook</span>
               </a>
               <a href="https://www.instagram.com/tgabuildersinc?igsh=MTBpa2VhanBwaXg4OQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
-                <Instagram className="h-5 w-5" />
+                <InstagramIcon className="h-5 w-5" />
                 <span>Instagram</span>
               </a>
               <a href="https://www.tiktok.com/@tgabuildersinc?_t=ZT-8vSEDJDadCQ&_r=1" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">

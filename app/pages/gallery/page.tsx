@@ -28,8 +28,8 @@ const Gallery: React.FC = () => {
     description: i < 30 ? `Professional construction and design showcase ${i + 1}` : `Stunning landscape design and outdoor spaces ${i - 29}`
   }));
 
-  // Add 24h Fitness Stone Walls images (gallery-31 through gallery-35)
-  const fitnessStoneWallsImages: GalleryImage[] = Array.from({ length: 5 }, (_, i) => ({
+  // Add 24h Fitness Stone Walls images (gallery-31 through gallery-40)
+  const fitnessStoneWallsImages: GalleryImage[] = Array.from({ length: 10 }, (_, i) => ({
     src: `/gallery-${31 + i}.webp`,
     alt: `24h Fitness Stone Walls Project ${i + 1}`,
     description: `Professional stone wall construction and design for 24h Fitness facility ${i + 1}`
