@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
-import { motion, AnimatePresence, PanInfo } from 'framer-motion';
+import { motion, AnimatePresence, type PanInfo } from 'motion/react';
 
 interface Review {
   name: string;

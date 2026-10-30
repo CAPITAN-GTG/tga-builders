@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface ImageGalleryProps {
   images: number[];
@@ -12,14 +12,23 @@ interface ImageGalleryProps {
 const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
+  useEffect(() => {
+    if (selectedImage === null) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [selectedImage]);
+
   const openLightbox = (imageIndex: number) => {
     setSelectedImage(imageIndex);
-    document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
     setSelectedImage(null);
-    document.body.style.overflow = 'auto';
   };
 
   const navigateImage = (direction: 'prev' | 'next') => {
@@ -45,7 +54,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
         {images.map((num, index) => (
           <motion.div
             key={num}
-            className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer"
+            className="relative overflow-hidden rounded-xl border border-gray-200 shadow-lg group cursor-pointer bg-gray-100"
             whileHover={{ y: -5 }}
             transition={{ duration: 0.2 }}
             onClick={() => openLightbox(index)}

@@ -3,20 +3,6 @@
 import { Phone, CheckCircle2, Clock, Shield, Users, Wrench } from 'lucide-react';
 import Link from 'next/link';
 
-const services = [
-  "Interior and exterior painting",
-  "Kitchen cabinets",
-  "Home repairs",
-  "Bathroom repairs",
-  "Demolitions",
-  "Drywall repairs",
-  "Flooring and tiling",
-  "General Household",
-  "Curtain Hanging",
-  "Door",
-  "Door Installation"
-];
-
 const features = [
   {
     icon: Clock,

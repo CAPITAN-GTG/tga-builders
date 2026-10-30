@@ -20,10 +20,10 @@ import {
   PaintBucket,
   Building,
   Building2,
-  HardDrive,
   AlertTriangle,
   MapPin,
 } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { type FC } from 'react';
@@ -81,24 +81,26 @@ const Navbar: FC = () => {
 
   const isCurrentPath = (path: string): boolean => pathname === path;
 
+  const resetMobileAccordions = () => {
+    setMobileAboutOpen(false);
+    setMobileServicesOpen(false);
+  };
+
   const AboutUsDropdown = () => (
     <Menu as="div" className="relative">
       {({ open }) => (
         <>
           <Menu.Button
             className={`
-              flex items-center gap-1.5 md:gap-2 px-2 md:px-3 lg:px-4 py-2.5 
-              rounded-md text-xs md:text-sm font-medium whitespace-nowrap
+              flex items-center gap-1.5 xl:gap-2 px-2 xl:px-4 py-2.5 
+              rounded-md text-sm font-medium whitespace-nowrap
               text-[#17416E] hover:bg-[#17416E]/10
               transition-all duration-200 ease-in-out hover:scale-105
               group relative
             `}
           >
             <Users className="h-4 w-4 flex-shrink-0 group-hover:animate-pulse" />
-            <span className="tracking-wide">
-              <span className="hidden md:block lg:hidden">About</span>
-              <span className="block md:hidden lg:block">About Us</span>
-            </span>
+            <span className="tracking-wide">About</span>
             <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
           </Menu.Button>
 
@@ -145,18 +147,15 @@ const Navbar: FC = () => {
         <>
           <Menu.Button
             className={`
-              flex items-center gap-1.5 md:gap-2 px-2 md:px-3 lg:px-4 py-2.5 
-              rounded-md text-xs md:text-sm font-medium whitespace-nowrap
+              flex items-center gap-1.5 xl:gap-2 px-2 xl:px-4 py-2.5 
+              rounded-md text-sm font-medium whitespace-nowrap
               text-[#17416E] hover:bg-[#17416E]/10
               transition-all duration-200 ease-in-out hover:scale-105
               group relative
             `}
           >
             <Wrench className="h-4 w-4 flex-shrink-0 group-hover:animate-pulse" />
-            <span className="tracking-wide">
-              <span className="hidden md:block lg:hidden">Services</span>
-              <span className="block md:hidden lg:block">Services</span>
-            </span>
+            <span className="tracking-wide">Services</span>
             <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
           </Menu.Button>
 
@@ -294,17 +293,20 @@ const Navbar: FC = () => {
               {/* Logo */}
               <div className="flex-shrink-0">
                 <Link href="/" className="block">
-                  <img 
-                    src="/logo.webp" 
-                    alt="TGA Builders Logo" 
-                    className="h-16 w-auto hover:scale-105 transition-transform duration-300 ease-in-out" 
+                  <Image
+                    src="/logo.webp"
+                    alt="TGA Builders Logo"
+                    width={180}
+                    height={64}
+                    priority
+                    className="h-16 w-auto hover:scale-105 transition-transform duration-300 ease-in-out"
                   />
                 </Link>
               </div>
 
               {/* Desktop navigation */}
-              <div className="hidden sm:ml-6 sm:block">
-                <div className="flex items-center space-x-1 md:space-x-2 lg:space-x-3">
+              <div className="hidden lg:ml-6 lg:block">
+                <div className="flex items-center space-x-1 xl:space-x-3">
                   {navigation.map((item) => {
                     if (item.name === 'About Us') {
                       return <AboutUsDropdown key={item.name} />;
@@ -319,8 +321,8 @@ const Navbar: FC = () => {
                         key={item.name}
                         href={item.href}
                         className={`
-                          flex items-center gap-1.5 md:gap-2 px-2 md:px-3 lg:px-4 py-2.5 
-                          rounded-md text-xs md:text-sm font-medium whitespace-nowrap
+                          flex items-center gap-1.5 xl:gap-2 px-2 xl:px-4 py-2.5 
+                          rounded-md text-sm font-medium whitespace-nowrap
                           ${isCurrentPath(item.href)
                             ? 'bg-[#17416E] text-white shadow-inner'
                             : 'text-[#17416E] hover:bg-[#17416E]/10'
@@ -331,12 +333,7 @@ const Navbar: FC = () => {
                       >
                         <Icon className="h-4 w-4 flex-shrink-0 group-hover:animate-pulse" />
                         <span className="tracking-wide">
-                          <span className="hidden md:block lg:hidden">
-                            {item.shortName || item.name}
-                          </span>
-                          <span className="block md:hidden lg:block">
-                            {item.name}
-                          </span>
+                          {item.shortName || item.name}
                         </span>
                         {isCurrentPath(item.href) && (
                           <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#17416E] rounded-full" />
@@ -348,8 +345,13 @@ const Navbar: FC = () => {
               </div>
 
               {/* Mobile menu button */}
-              <div className="sm:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-[#17416E] hover:bg-[#17416E]/10 focus:outline-none focus:ring-2 focus:ring-[#17416E] transition-transform active:scale-95">
+              <div className="lg:hidden">
+                <Disclosure.Button
+                  className="inline-flex items-center justify-center rounded-md p-2 text-[#17416E] hover:bg-[#17416E]/10 focus:outline-none focus:ring-2 focus:ring-[#17416E] transition-transform active:scale-95"
+                  onClick={() => {
+                    if (open) resetMobileAccordions();
+                  }}
+                >
                   <span className="sr-only">
                     {open ? 'Close main menu' : 'Open main menu'}
                   </span>
@@ -365,20 +367,23 @@ const Navbar: FC = () => {
 
           {/* Mobile menu */}
           <Transition
+            show={open}
             enter="transition-all duration-300 ease-in-out"
-            enterFrom="transform -translate-y-4 opacity-0"
+            enterFrom="transform -translate-y-2 opacity-0"
             enterTo="transform translate-y-0 opacity-100"
             leave="transition-all duration-200 ease-in-out"
             leaveFrom="transform translate-y-0 opacity-100"
-            leaveTo="transform -translate-y-4 opacity-0"
+            leaveTo="transform -translate-y-2 opacity-0"
+            afterLeave={resetMobileAccordions}
           >
-            <Disclosure.Panel className="sm:hidden">
-              <div className="space-y-1 px-4 pb-3 pt-2">
+            <Disclosure.Panel static className="lg:hidden border-t border-gray-100">
+              <div className="max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain space-y-1 px-4 pb-4 pt-2">
                 {navigation.map((item) => {
                   if (item.name === 'About Us') {
                     return (
-                      <div key={item.name} className="py-2">
+                      <div key={item.name} className="py-1">
                         <button
+                          type="button"
                           onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
                           className="flex items-center justify-between w-full rounded-md px-4 py-3 text-base font-medium text-[#17416E] hover:bg-[#17416E]/10"
                         >
@@ -388,16 +393,8 @@ const Navbar: FC = () => {
                           </div>
                           <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${mobileAboutOpen ? 'rotate-180' : ''}`} />
                         </button>
-                        <Transition
-                          show={mobileAboutOpen}
-                          enter="transition-all duration-300 ease-in-out"
-                          enterFrom="opacity-0 max-h-0 scale-95"
-                          enterTo="opacity-100 max-h-[500px] scale-100"
-                          leave="transition-all duration-200 ease-in-out"
-                          leaveFrom="opacity-100 max-h-[500px] scale-100"
-                          leaveTo="opacity-0 max-h-0 scale-95"
-                        >
-                          <div className="overflow-hidden space-y-1 mt-2 pl-4 origin-top">
+                        {mobileAboutOpen && (
+                          <div className="space-y-1 mt-1 pl-4">
                             {aboutUsOptions.map((option) => {
                               const Icon = option.icon;
                               return (
@@ -413,14 +410,15 @@ const Navbar: FC = () => {
                               );
                             })}
                           </div>
-                        </Transition>
+                        )}
                       </div>
                     );
                   }
                   if (item.name === 'Services') {
                     return (
-                      <div key={item.name} className="py-2">
+                      <div key={item.name} className="py-1">
                         <button
+                          type="button"
                           onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                           className="flex items-center justify-between w-full rounded-md px-4 py-3 text-base font-medium text-[#17416E] hover:bg-[#17416E]/10"
                         >
@@ -430,16 +428,8 @@ const Navbar: FC = () => {
                           </div>
                           <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
                         </button>
-                        <Transition
-                          show={mobileServicesOpen}
-                          enter="transition-all duration-300 ease-in-out"
-                          enterFrom="opacity-0 max-h-0 scale-95"
-                          enterTo="opacity-100 max-h-[2000px] scale-100"
-                          leave="transition-all duration-200 ease-in-out"
-                          leaveFrom="opacity-100 max-h-[2000px] scale-100"
-                          leaveTo="opacity-0 max-h-0 scale-95"
-                        >
-                          <div className="overflow-hidden space-y-4 mt-2 pl-4 origin-top">
+                        {mobileServicesOpen && (
+                          <div className="space-y-4 mt-1 pl-4">
                             {/* Interior Services */}
                             <div>
                               <div className="px-4 text-xs font-medium text-[#17416E]/70 uppercase tracking-wider">Home & Interior</div>
@@ -532,7 +522,7 @@ const Navbar: FC = () => {
                               </div>
                             </div>
                           </div>
-                        </Transition>
+                        )}
                       </div>
                     );
                   }

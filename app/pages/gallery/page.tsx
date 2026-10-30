@@ -1,5 +1,3 @@
-"use client"
-import React, { useState } from 'react';
 import Image from 'next/image';
 
 interface GalleryImage {
@@ -84,40 +82,33 @@ const Gallery: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Title Section */}
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <header className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-            Project Gallery
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover our exceptional work and craftsmanship through our extensive portfolio of completed projects
-          </p>
-        </header>
-      </div>
-
-      {/* Video Section - Full Width Separator */}
-      <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-gray-900 mb-16">
-        {videos.map((video, index) => (
-          <div key={index} className="relative w-full max-h-[600px] flex items-center justify-center">
+      {/* Video Section - full width */}
+      <section className="mb-16 w-full overflow-hidden bg-black">
+        {videos.map((video) => (
+          <figure
+            key={video.src}
+            className="relative h-[360px] w-full overflow-hidden sm:h-[480px] lg:h-[560px]"
+          >
             <video
-              className="w-full h-auto max-h-[600px] object-contain"
+              className="h-full w-full object-cover"
               controls
               playsInline
               preload="metadata"
+              poster="/tga-video-poster.jpg"
+              aria-label={video.title}
             >
               <source src={video.src} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          </div>
+          </figure>
         ))}
       </section>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         {/* Image Sections */}
         <div className="space-y-16">
           {projects.map((project, projectIndex) => (
-            <section key={projectIndex} className="scroll-mt-16" id={project.category.toLowerCase().replace(/\s+/g, '-')}>
+            <section key={project.category} className="scroll-mt-16" id={project.category.toLowerCase().replace(/\s+/g, '-')}>
               <div className="mb-6 pb-4 border-b border-gray-200">
                 <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2">
                   {project.category}
@@ -130,8 +121,8 @@ const Gallery: React.FC = () => {
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
                 {project.images.map((image, imageIndex) => (
                   <div
-                    key={imageIndex}
-                    className="group relative rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl bg-gray-100"
+                    key={image.src}
+                    className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                   >
                     <div className="relative aspect-[4/3]">
                       <Image

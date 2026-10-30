@@ -1,11 +1,10 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { 
   Phone, 
   Mail, 
   MapPin, 
   MessageCircle,
-  Image as ImageIcon,
-  ExternalLink
 } from 'lucide-react';
 
 const FacebookIcon = ({ className }: { className?: string }) => (
@@ -27,18 +26,6 @@ const InstagramIcon = ({ className }: { className?: string }) => (
     className={className}
   >
     <path d="M7.5 0h9A7.5 7.5 0 0 1 24 7.5v9a7.5 7.5 0 0 1-7.5 7.5h-9A7.5 7.5 0 0 1 0 16.5v-9A7.5 7.5 0 0 1 7.5 0Zm0 2A5.5 5.5 0 0 0 2 7.5v9A5.5 5.5 0 0 0 7.5 22h9a5.5 5.5 0 0 0 5.5-5.5v-9A5.5 5.5 0 0 0 16.5 2h-9ZM12 6.2A5.8 5.8 0 1 1 6.2 12 5.8 5.8 0 0 1 12 6.2Zm0 2A3.8 3.8 0 1 0 15.8 12 3.8 3.8 0 0 0 12 8.2Zm6.3-2.65a1.35 1.35 0 1 1-1.35-1.35 1.35 1.35 0 0 1 1.35 1.35Z" />
-  </svg>
-);
-
-const XIcon = () => (
-  <svg
-    width="20"
-    height="20"
-    viewBox="0 0 1200 1227"
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" />
   </svg>
 );
 
@@ -111,7 +98,7 @@ const Footer = () => {
                 <span>Instagram</span>
               </a>
               <a href="https://www.tiktok.com/@tgabuildersinc?_t=ZT-8vSEDJDadCQ&_r=1" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">
-                <img src="/tiktok.webp" alt="TikTok" className="h-5 w-5 object-contain rounded-md invert" />
+                <Image src="/tiktok.webp" alt="TikTok" width={20} height={20} className="h-5 w-5 object-contain rounded-md invert" />
                 <span>TikTok</span>
               </a>
               <Link href="/pages/whatsapp" className="flex items-center justify-center md:justify-start gap-3 hover:text-cyan-400 transition-colors duration-300">

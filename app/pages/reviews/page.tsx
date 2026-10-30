@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ExternalLink, Star, Quote } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import ReviewCarousel from '@/components/ReviewCarousel';
 import ImageGallery from '@/components/ImageGallery';
 import Image from 'next/image';
