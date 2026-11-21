@@ -98,8 +98,8 @@ const Gallery: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Video Section */}
-      <section className="mb-16 w-full bg-black">
+      {/* Main video */}
+      <section className="mb-16 w-full overflow-hidden bg-black">
         <figure className="relative h-[360px] w-full overflow-hidden sm:h-[480px] lg:h-[560px]">
           <video
             className="h-full w-full object-cover"
@@ -113,29 +113,9 @@ const Gallery: React.FC = () => {
             Your browser does not support the video tag.
           </video>
         </figure>
-
-        <div className="mx-auto grid max-w-[1400px] grid-cols-3 gap-2 px-2 py-2 sm:gap-3 sm:px-4 sm:py-3 lg:gap-4 lg:px-8">
-          {clipVideos.map((video) => (
-            <figure
-              key={video.src}
-              className="relative aspect-square overflow-hidden rounded-lg bg-black"
-            >
-              <video
-                className="h-full w-full object-cover"
-                controls
-                playsInline
-                preload="metadata"
-                aria-label={video.title}
-              >
-                <source src={video.src} type="video/mp4" />
-              </video>
-            </figure>
-          ))}
-        </div>
       </section>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        {/* Image Sections */}
         <div className="space-y-16">
           {projects.map((project, projectIndex) => (
             <section key={project.category} className="scroll-mt-16" id={project.category.toLowerCase().replace(/\s+/g, '-')}>
@@ -179,6 +159,38 @@ const Gallery: React.FC = () => {
               </div>
             </section>
           ))}
+
+          <section className="scroll-mt-16" id="project-videos">
+            <div className="mb-6 pb-4 border-b border-gray-200">
+              <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2">
+                Project Videos
+              </h2>
+              <p className="text-gray-600 text-sm md:text-base">
+                Short clips from recent on-site work
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+              {clipVideos.map((video) => (
+                <div
+                  key={video.src}
+                  className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="relative aspect-[4/3] bg-black">
+                    <video
+                      className="absolute inset-0 h-full w-full object-cover"
+                      controls
+                      playsInline
+                      preload="metadata"
+                      aria-label={video.title}
+                    >
+                      <source src={video.src} type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
     </div>
