@@ -72,40 +72,66 @@ const Gallery: React.FC = () => {
     }
   ];
 
-  const videoUrls = [
-    "https://uuihthmh3pjyd1m5.public.blob.vercel-storage.com/gallery-1.mp4",
-    "https://uuihthmh3pjyd1m5.public.blob.vercel-storage.com/gallery-13.mp4",
-    "https://uuihthmh3pjyd1m5.public.blob.vercel-storage.com/gallery-26.mp4",
-  ];
-
-  const videos: Video[] = videoUrls.map((src, index) => ({
-    title: `Our Work in Action ${index + 1}`,
+  const mainVideo: Video = {
+    title: "Our Work in Action",
     description: "Watch our skilled team transform spaces and bring visions to life",
-    src,
-  }));
+    src: "/tga-video.mp4",
+  };
+
+  const clipVideos: Video[] = [
+    {
+      title: "Project Clip 1",
+      description: "On-site project highlight",
+      src: "https://uuihthmh3pjyd1m5.public.blob.vercel-storage.com/gallery-1.mp4",
+    },
+    {
+      title: "Project Clip 2",
+      description: "On-site project highlight",
+      src: "https://uuihthmh3pjyd1m5.public.blob.vercel-storage.com/gallery-13.mp4",
+    },
+    {
+      title: "Project Clip 3",
+      description: "On-site project highlight",
+      src: "https://uuihthmh3pjyd1m5.public.blob.vercel-storage.com/gallery-26.mp4",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Video Section - full width */}
-      <section className="mb-16 w-full overflow-hidden bg-black">
-        {videos.map((video, index) => (
-          <figure
-            key={video.src}
-            className="relative h-[360px] w-full overflow-hidden sm:h-[480px] lg:h-[560px]"
+      {/* Video Section */}
+      <section className="mb-16 w-full bg-black">
+        <figure className="relative h-[360px] w-full overflow-hidden sm:h-[480px] lg:h-[560px]">
+          <video
+            className="h-full w-full object-cover"
+            controls
+            playsInline
+            preload="metadata"
+            poster="/tga-video-poster.jpg"
+            aria-label={mainVideo.title}
           >
-            <video
-              className="h-full w-full object-cover"
-              controls
-              playsInline
-              preload="metadata"
-              poster={index === 0 ? "/tga-video-poster.jpg" : undefined}
-              aria-label={video.title}
+            <source src={mainVideo.src} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+
+        <div className="mx-auto grid max-w-[1400px] grid-cols-3 gap-2 px-2 py-2 sm:gap-3 sm:px-4 sm:py-3 lg:gap-4 lg:px-8">
+          {clipVideos.map((video) => (
+            <figure
+              key={video.src}
+              className="relative aspect-square overflow-hidden rounded-lg bg-black"
             >
-              <source src={video.src} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </figure>
-        ))}
+              <video
+                className="h-full w-full object-cover"
+                controls
+                playsInline
+                preload="metadata"
+                aria-label={video.title}
+              >
+                <source src={video.src} type="video/mp4" />
+              </video>
+            </figure>
+          ))}
+        </div>
       </section>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-16">
