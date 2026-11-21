@@ -72,19 +72,23 @@ const Gallery: React.FC = () => {
     }
   ];
 
-  const videos: Video[] = [
-    {
-      title: "Our Work in Action",
-      description: "Watch our skilled team transform spaces and bring visions to life",
-      src: process.env.NEXT_PUBLIC_TGA_VIDEO_URL || "/tga-video.mp4"
-    }
+  const videoUrls = [
+    "https://uuihthmh3pjyd1m5.public.blob.vercel-storage.com/gallery-1.mp4",
+    "https://uuihthmh3pjyd1m5.public.blob.vercel-storage.com/gallery-13.mp4",
+    "https://uuihthmh3pjyd1m5.public.blob.vercel-storage.com/gallery-26.mp4",
   ];
+
+  const videos: Video[] = videoUrls.map((src, index) => ({
+    title: `Our Work in Action ${index + 1}`,
+    description: "Watch our skilled team transform spaces and bring visions to life",
+    src,
+  }));
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Video Section - full width */}
       <section className="mb-16 w-full overflow-hidden bg-black">
-        {videos.map((video) => (
+        {videos.map((video, index) => (
           <figure
             key={video.src}
             className="relative h-[360px] w-full overflow-hidden sm:h-[480px] lg:h-[560px]"
@@ -94,7 +98,7 @@ const Gallery: React.FC = () => {
               controls
               playsInline
               preload="metadata"
-              poster="/tga-video-poster.jpg"
+              poster={index === 0 ? "/tga-video-poster.jpg" : undefined}
               aria-label={video.title}
             >
               <source src={video.src} type="video/mp4" />
