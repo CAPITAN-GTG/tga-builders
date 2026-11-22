@@ -1,5 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
+import { createPageMetadata } from '@/lib/seo'
+
+export const metadata = createPageMetadata({
+  title: 'WhatsApp',
+  description:
+    'Message TGA Builders on WhatsApp for construction, repairs, and facility maintenance questions.',
+  path: '/pages/whatsapp',
+})
 
 const WhatsApp = () => {
   return (

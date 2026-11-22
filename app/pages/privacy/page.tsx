@@ -1,4 +1,12 @@
 import React from 'react'
+import { createPageMetadata } from '@/lib/seo'
+
+export const metadata = createPageMetadata({
+  title: 'Privacy Policy',
+  description:
+    'How TGA Builders Inc. collects, uses, and protects personal information on this website.',
+  path: '/pages/privacy',
+})
 
 const PrivacyPolicy = () => {
   return (

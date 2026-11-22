@@ -7,7 +7,7 @@ import ImageGallery from '@/components/ImageGallery';
 import Image from 'next/image';
 
 const Reviews = () => {
-  const images = [20, 21, 22, 23, 24, 25, 26, 27];
+  const images = [41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51];
 
   return (
     <div className="min-h-screen bg-gray-50">
