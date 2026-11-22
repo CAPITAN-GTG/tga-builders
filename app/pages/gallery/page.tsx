@@ -1,9 +1,18 @@
-import Image from 'next/image';
+import Image from "next/image";
+import GalleryHeroVideo from "@/components/GalleryHeroVideo";
+import GalleryClipVideo from "@/components/GalleryClipVideo";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Project Gallery",
+  description:
+    "Browse completed residential and commercial projects by TGA Builders across Southern California.",
+  path: "/pages/gallery",
+});
 
 interface GalleryImage {
   src: string;
   alt: string;
-  description: string;
 }
 
 interface ProjectCategory {
@@ -12,147 +21,123 @@ interface ProjectCategory {
   images: GalleryImage[];
 }
 
-interface Video {
-  title: string;
-  description: string;
-  src: string;
-}
+const galleryImages: GalleryImage[] = Array.from({ length: 33 }, (_, i) => ({
+  src: i < 30 ? `/gallery-${i + 1}.webp` : `/landscape_${i - 29}.webp`,
+  alt: i < 30 ? `TGA Builders project ${i + 1}` : `TGA Builders landscape ${i - 29}`,
+}));
 
-const Gallery: React.FC = () => {
-  // Generate array of 33 gallery images
-  const galleryImages: GalleryImage[] = Array.from({ length: 33 }, (_, i) => ({
-    src: i < 30 ? `/gallery-${i + 1}.webp` : `/landscape_${i - 29}.webp`,
-    alt: i < 30 ? `Gallery Project ${i + 1}` : `Landscape Project ${i - 29}`,
-    description: i < 30 ? `Professional construction and design showcase ${i + 1}` : `Stunning landscape design and outdoor spaces ${i - 29}`
-  }));
+const fitnessStoneWallsImages: GalleryImage[] = Array.from({ length: 21 }, (_, i) => ({
+  src: `/gallery-${31 + i}.webp`,
+  alt: `24h Fitness stone walls ${i + 1}`,
+}));
 
-  // Add 24h Fitness Stone Walls images (gallery-31 through gallery-51)
-  const fitnessStoneWallsImages: GalleryImage[] = Array.from({ length: 21 }, (_, i) => ({
-    src: `/gallery-${31 + i}.webp`,
-    alt: `24h Fitness Stone Walls Project ${i + 1}`,
-    description: `Professional stone wall construction and design for 24h Fitness facility ${i + 1}`
-  }));
+const projects: ProjectCategory[] = [
+  {
+    category: "Commercial",
+    description: "Commercial spaces built for daily use and lasting performance.",
+    images: galleryImages.slice(0, 10),
+  },
+  {
+    category: "Interiors",
+    description: "Clean interior finishes for homes and facilities.",
+    images: galleryImages.slice(10, 15),
+  },
+  {
+    category: "Renovations",
+    description: "Remodels and upgrades from start to final walkthrough.",
+    images: galleryImages.slice(15, 20),
+  },
+  {
+    category: "Architecture",
+    description: "Structural and architectural work across Southern California.",
+    images: galleryImages.slice(20, 25),
+  },
+  {
+    category: "Specialty builds",
+    description: "Focused builds that solve specific site needs.",
+    images: galleryImages.slice(25, 30),
+  },
+  {
+    category: "Landscape",
+    description: "Outdoor spaces, yards, and property improvements.",
+    images: galleryImages.slice(30, 33),
+  },
+  {
+    category: "24h Fitness stone walls",
+    description: "Stone wall construction for commercial fitness facilities.",
+    images: fitnessStoneWallsImages,
+  },
+];
 
-  // Organize images into categories with more professional descriptions
-  const projects: ProjectCategory[] = [
-    {
-      category: 'Commercial Excellence',
-      description: 'State-of-the-art commercial spaces designed for success',
-      images: galleryImages.slice(0, 10)
-    },
-    {
-      category: 'Modern Interiors',
-      description: 'Contemporary interior designs that inspire and captivate',
-      images: galleryImages.slice(10, 15)
-    },
-    {
-      category: 'Expert Renovations',
-      description: 'Transformative renovation projects that exceed expectations',
-      images: galleryImages.slice(15, 20)
-    },
-    {
-      category: 'Architectural Marvels',
-      description: 'Stunning architectural designs that push boundaries',
-      images: galleryImages.slice(20, 25)
-    },
-    {
-      category: 'Sustainable Projects',
-      description: 'Eco-friendly construction with a focus on sustainability',
-      images: galleryImages.slice(25, 30)
-    },
-    {
-      category: 'Landscape Design',
-      description: 'Beautiful outdoor spaces that enhance your property',
-      images: galleryImages.slice(30, 33)
-    },
-    {
-      category: '24h Fitness Stone Walls',
-      description: 'Expert stone wall construction and design for commercial fitness facilities',
-      images: fitnessStoneWallsImages
-    }
-  ];
+const clipVideos = [
+  {
+    title: "Project clip 1",
+    src: "https://uuihthmh3pjyd1m5.public.blob.vercel-storage.com/gallery-1.mp4",
+  },
+  {
+    title: "Project clip 2",
+    src: "https://uuihthmh3pjyd1m5.public.blob.vercel-storage.com/gallery-13.mp4",
+  },
+  {
+    title: "Project clip 3",
+    src: "https://uuihthmh3pjyd1m5.public.blob.vercel-storage.com/gallery-26.mp4",
+  },
+];
 
-  const mainVideo: Video = {
-    title: "Our Work in Action",
-    description: "Watch our skilled team transform spaces and bring visions to life",
-    src: "/tga-video.mp4",
-  };
+const videoSrc = process.env.NEXT_PUBLIC_TGA_VIDEO_URL || "/tga-video.mp4";
 
-  const clipVideos: Video[] = [
-    {
-      title: "Project Clip 1",
-      description: "On-site project highlight",
-      src: "https://uuihthmh3pjyd1m5.public.blob.vercel-storage.com/gallery-1.mp4",
-    },
-    {
-      title: "Project Clip 2",
-      description: "On-site project highlight",
-      src: "https://uuihthmh3pjyd1m5.public.blob.vercel-storage.com/gallery-13.mp4",
-    },
-    {
-      title: "Project Clip 3",
-      description: "On-site project highlight",
-      src: "https://uuihthmh3pjyd1m5.public.blob.vercel-storage.com/gallery-26.mp4",
-    },
-  ];
-
+export default function Gallery() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Main video */}
-      <section className="mb-16 w-full overflow-hidden bg-black">
-        <figure className="relative h-[360px] w-full overflow-hidden sm:h-[480px] lg:h-[560px]">
-          <video
-            className="h-full w-full object-cover"
-            controls
-            playsInline
-            preload="metadata"
+    <div className="min-h-screen bg-brand-mist">
+      <section className="relative w-full overflow-hidden bg-brand-ink" aria-label="Gallery highlight reel">
+        <div className="relative h-[min(70vh,520px)] w-full sm:h-[min(75vh,600px)] lg:h-[min(80vh,680px)]">
+          <GalleryHeroVideo
+            src={videoSrc}
             poster="/tga-video-poster.jpg"
-            aria-label={mainVideo.title}
-          >
-            <source src={mainVideo.src} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </figure>
+            title="TGA Builders work in action"
+          />
+        </div>
       </section>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="space-y-16">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <div className="space-y-20">
           {projects.map((project, projectIndex) => (
-            <section key={project.category} className="scroll-mt-16" id={project.category.toLowerCase().replace(/\s+/g, '-')}>
-              <div className="mb-6 pb-4 border-b border-gray-200">
-                <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2">
+            <section
+              key={project.category}
+              className="scroll-mt-24"
+              id={project.category.toLowerCase().replace(/\s+/g, "-")}
+              aria-labelledby={`gallery-${projectIndex}`}
+            >
+              <div className="max-w-2xl">
+                <p className="font-display text-[0.75rem] font-semibold uppercase tracking-[0.16em] text-brand-green">
+                  Projects
+                </p>
+                <h2
+                  id={`gallery-${projectIndex}`}
+                  className="mt-3 font-display text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-brand-ink"
+                >
                   {project.category}
                 </h2>
-                <p className="text-gray-600 text-sm md:text-base">
+                <p className="mt-3 font-body text-base leading-relaxed text-brand-navy/75 sm:text-lg">
                   {project.description}
                 </p>
               </div>
-              
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+
+              <div className="mt-8 grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4">
                 {project.images.map((image, imageIndex) => (
                   <div
                     key={image.src}
-                    className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                    className="group relative overflow-hidden border border-brand-silver/40 bg-white"
                   >
                     <div className="relative aspect-[4/3]">
                       <Image
                         src={image.src}
                         alt={image.alt}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                        priority={projectIndex === 0 && imageIndex === 0}
+                        priority={projectIndex === 0 && imageIndex < 4}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                          <h3 className="text-white text-sm font-semibold mb-1">
-                            {image.alt}
-                          </h3>
-                          <p className="text-white/90 text-xs">
-                            {image.description}
-                          </p>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 ))}
@@ -160,33 +145,26 @@ const Gallery: React.FC = () => {
             </section>
           ))}
 
-          <section className="scroll-mt-16" id="project-videos">
-            <div className="mb-6 pb-4 border-b border-gray-200">
-              <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2">
-                Project Videos
+          <section className="scroll-mt-24" id="project-videos" aria-labelledby="project-videos-heading">
+            <div className="max-w-2xl">
+              <p className="font-display text-[0.75rem] font-semibold uppercase tracking-[0.16em] text-brand-green">
+                On site
+              </p>
+              <h2
+                id="project-videos-heading"
+                className="mt-3 font-display text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-brand-ink"
+              >
+                Project clips
               </h2>
-              <p className="text-gray-600 text-sm md:text-base">
-                Short clips from recent on-site work
+              <p className="mt-3 font-body text-base leading-relaxed text-brand-navy/75 sm:text-lg">
+                Short loops from recent work — unmute to hear audio.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
               {clipVideos.map((video) => (
-                <div
-                  key={video.src}
-                  className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                >
-                  <div className="relative aspect-[4/3] bg-black">
-                    <video
-                      className="absolute inset-0 h-full w-full object-cover"
-                      controls
-                      playsInline
-                      preload="metadata"
-                      aria-label={video.title}
-                    >
-                      <source src={video.src} type="video/mp4" />
-                    </video>
-                  </div>
+                <div key={video.src} className="border border-brand-silver/40 bg-white">
+                  <GalleryClipVideo src={video.src} title={video.title} />
                 </div>
               ))}
             </div>
@@ -195,6 +173,4 @@ const Gallery: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default Gallery;
+}

@@ -1,4 +1,12 @@
 import React from 'react'
+import { createPageMetadata } from '@/lib/seo'
+
+export const metadata = createPageMetadata({
+  title: 'Terms of Service',
+  description:
+    'Terms and conditions for using the TGA Builders Inc. website.',
+  path: '/pages/terms',
+})
 
 const TermsOfService = () => {
   return (
